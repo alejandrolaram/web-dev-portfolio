@@ -5,24 +5,24 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 const Blog = () => {
   const blogPosts = [
     {
-      title: "My Journey in Full Stack Web Development",
-      excerpt: "Discover how I started my adventure in programming and the technologies that have marked my professional growth.",
+      title: "Mi Viaje en el Desarrollo Web Full Stack",
+      excerpt: "Descubre cómo comencé mi aventura en la programación y las tecnologías que han marcado mi crecimiento profesional.",
       date: "2024-01-15",
       readTime: "5 min",
-      category: "Personal Experience",
+      category: "Experiencia Personal",
       gradient: "from-cyan-400 to-blue-500"
     },
     {
-      title: "React vs Vanilla JavaScript: When to use each?",
-      excerpt: "A practical comparison between React and vanilla JavaScript, with real examples of when to choose each technology.",
+      title: "React vs JavaScript Vanilla: ¿Cuándo usar cada uno?",
+      excerpt: "Una comparación práctica entre React y JavaScript vanilla, con ejemplos reales de cuándo elegir cada tecnología.",
       date: "2024-01-10",
       readTime: "8 min",
-      category: "Frontend Development",
+      category: "Desarrollo Frontend",
       gradient: "from-green-400 to-emerald-500"
     },
     {
-      title: "SEO Optimization for Developers",
-      excerpt: "Essential SEO techniques that every web developer should know to create websites that rank well.",
+      title: "Optimización SEO para Desarrolladores",
+      excerpt: "Técnicas de SEO esenciales que todo desarrollador web debe conocer para crear sitios que posicionen bien.",
       date: "2024-01-05",
       readTime: "6 min",
       category: "SEO",
@@ -47,7 +47,7 @@ const Blog = () => {
               </span>
             </h2>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              I share my experiences, learnings and advice about web development
+              Comparto mis experiencias, aprendizajes y consejos sobre desarrollo web
             </p>
           </div>
         </div>
@@ -79,7 +79,7 @@ const Blog = () => {
                 <div className="flex items-center justify-between text-sm text-white/70 mb-4">
                   <div className="flex items-center gap-2">
                     <Calendar size={16} />
-                    <span>{new Date(post.date).toLocaleDateString('en-US', { 
+                    <span>{new Date(post.date).toLocaleDateString('es-ES', { 
                       year: 'numeric', 
                       month: 'long', 
                       day: 'numeric' 
@@ -92,7 +92,7 @@ const Blog = () => {
                 </div>
 
                 <button className="flex items-center gap-2 text-cyan-300 font-semibold hover:gap-3 transition-all duration-300 hover:text-white">
-                  Read more
+                  Leer más
                   <ArrowRight size={16} />
                 </button>
               </div>
@@ -102,7 +102,7 @@ const Blog = () => {
 
         <div className="text-center mt-12">
           <button className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 border border-white/20 backdrop-blur-sm">
-            View all articles
+            Ver todos los artículos
           </button>
         </div>
       </div>

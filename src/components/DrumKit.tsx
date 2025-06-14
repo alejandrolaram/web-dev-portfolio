@@ -7,10 +7,10 @@ const DrumKit = () => {
   const [lastPlayed, setLastPlayed] = useState<string | null>(null);
 
   const drumSounds = [
-    { key: 'Q', name: 'Kick', sound: 'kick', color: 'from-red-400 to-pink-600' },
-    { key: 'W', name: 'Snare', sound: 'snare', color: 'from-blue-400 to-cyan-600' },
+    { key: 'Q', name: 'Bombo', sound: 'kick', color: 'from-red-400 to-pink-600' },
+    { key: 'W', name: 'Redoblante', sound: 'snare', color: 'from-blue-400 to-cyan-600' },
     { key: 'E', name: 'Hi-Hat', sound: 'hihat', color: 'from-yellow-400 to-orange-600' },
-    { key: 'A', name: 'Open Hat', sound: 'openhat', color: 'from-green-400 to-emerald-600' },
+    { key: 'A', name: 'Hi-Hat Abierto', sound: 'openhat', color: 'from-green-400 to-emerald-600' },
     { key: 'S', name: 'Ride', sound: 'ride', color: 'from-purple-400 to-violet-600' },
     { key: 'D', name: 'Crash', sound: 'crash', color: 'from-pink-400 to-rose-600' },
     { key: 'Z', name: 'Tom 1', sound: 'tom1', color: 'from-indigo-400 to-blue-600' },
@@ -263,7 +263,7 @@ const DrumKit = () => {
           
           <Link 
             to="/" 
-            className="text-2xl font-bold gradient-text-cyber text-shadow-glow"
+            className="text-2xl font-bold text-white text-shadow-glow"
           >
             Mi Portafolio ✨
           </Link>
@@ -283,8 +283,8 @@ const DrumKit = () => {
           {/* Header */}
           <div className="text-center mb-8">
             <div className="glass-effect rounded-3xl p-8 mb-8 border border-white/30 shadow-2xl backdrop-blur-glass">
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 gradient-text-cyber text-shadow-glow">
-                🥁 Drum Kit Virtual 🥁
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 text-shadow-glow">
+                🥁 Batería Virtual 🥁
               </h1>
               <p className="text-xl text-white/90 mb-6">
                 ¡Toca la batería con tu teclado! Presiona las teclas Q, W, E, A, S, D, Z, X, C ✨
@@ -333,14 +333,14 @@ const DrumKit = () => {
 
             {/* Instrucciones */}
             <div className="mt-8 text-center">
-              <h3 className="text-2xl font-bold text-white mb-4 gradient-text-cyber">🎵 Instrucciones</h3>
+              <h3 className="text-2xl font-bold text-white mb-4 text-shadow-glow">🎵 Instrucciones</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-white/80">
                 <div className="glass-effect p-4 rounded-2xl border border-white/20">
                   <h4 className="font-bold mb-2 text-white">🎹 Controles de Teclado</h4>
                   <p>Usa las teclas Q, W, E, A, S, D, Z, X, C para tocar diferentes elementos de la batería</p>
                 </div>
                 <div className="glass-effect p-4 rounded-2xl border border-white/20">
-                  <h4 className="font-bold mb-2 text-white">🖱️ Controles de Mouse</h4>
+                  <h4 className="font-bold mb-2 text-white">🖱️ Controles de Ratón</h4>
                   <p>Haz clic en cualquier pad de la batería para reproducir el sonido correspondiente</p>
                 </div>
               </div>
@@ -351,7 +351,7 @@ const DrumKit = () => {
           {lastPlayed && (
             <div className="mt-6 text-center">
               <div className="inline-block glass-effect border border-purple-400/50 px-6 py-3 rounded-2xl">
-                <span className="text-purple-200 font-bold gradient-text-cyber">
+                <span className="text-purple-200 font-bold text-shadow-glow">
                   🎵 Reproduciendo: {drumSounds.find(d => d.sound === lastPlayed)?.name}
                 </span>
               </div>

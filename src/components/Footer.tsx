@@ -15,12 +15,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent mb-4">
-              My Portfolio ✨
+              Mi Portafolio ✨
             </h3>
             
             <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 mb-4 border border-white/20 shadow-xl">
               <p className="text-white/90 mb-4 leading-relaxed">
-                Full Stack Developer passionate about creating exceptional web experiences with modern technologies.
+                Desarrollador Full Stack apasionado por crear experiencias web excepcionales con tecnologías modernas.
               </p>
               <div className="flex flex-wrap gap-2">
                 {['HTML5', 'CSS3', 'JavaScript', 'React', 'Node.js', 'PostgreSQL'].map((tech) => (
@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4 text-white">Enlaces Rápidos</h4>
             
             <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 shadow-xl">
               <div className="space-y-3">
@@ -41,13 +41,13 @@ const Footer = () => {
                   onClick={() => document.getElementById('inicio')?.scrollIntoView({ behavior: 'smooth' })}
                   className="block text-white/80 hover:text-cyan-300 transition-colors duration-300"
                 >
-                  → Home
+                  → Inicio
                 </button>
                 <button 
                   onClick={() => document.getElementById('portafolio')?.scrollIntoView({ behavior: 'smooth' })}
                   className="block text-white/80 hover:text-cyan-300 transition-colors duration-300"
                 >
-                  → Portfolio
+                  → Portafolio
                 </button>
                 <button 
                   onClick={() => document.getElementById('blog')?.scrollIntoView({ behavior: 'smooth' })}
@@ -59,24 +59,24 @@ const Footer = () => {
                   onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}
                   className="block text-white/80 hover:text-cyan-300 transition-colors duration-300"
                 >
-                  → Contact
+                  → Contacto
                 </button>
               </div>
             </div>
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-white">Connect With Me</h4>
+            <h4 className="text-lg font-semibold mb-4 text-white">Conecta Conmigo</h4>
             
             <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 shadow-xl">
               <p className="text-white/80 mb-4">
-                Have an idea? Let's talk and make it happen!
+                ¿Tienes una idea? ¡Hablemos y hagámosla realidad!
               </p>
               <button 
                 onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}
                 className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 border border-white/20 w-full"
               >
-                Contact Now 🚀
+                Contactar Ahora 🚀
               </button>
             </div>
           </div>
@@ -88,15 +88,15 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="flex items-center gap-2 text-white/80 mb-4 md:mb-0">
-            <span>Made with</span>
+            <span>Hecho con</span>
             <Heart className="text-pink-400" size={16} />
-            <span>and</span>
+            <span>y</span>
             <Code className="text-cyan-400" size={16} />
-            <span>by a passionate developer</span>
+            <span>por un desarrollador apasionado</span>
           </div>
           
           <p className="text-white/70 text-sm">
-            © 2024 My Portfolio. All rights reserved.
+            © 2024 Mi Portafolio. Todos los derechos reservados.
           </p>
         </div>
       </div>

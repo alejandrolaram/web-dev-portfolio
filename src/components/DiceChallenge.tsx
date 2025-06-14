@@ -94,7 +94,7 @@ const DiceChallenge = () => {
           
           <Link 
             to="/" 
-            className="text-2xl font-bold gradient-text-cyber text-shadow-glow"
+            className="text-2xl font-bold text-white text-shadow-glow"
           >
             Mi Portafolio ✨
           </Link>
@@ -114,8 +114,8 @@ const DiceChallenge = () => {
           {/* Header */}
           <div className="text-center mb-8">
             <div className="glass-effect rounded-3xl p-8 mb-8 border border-white/30 shadow-2xl backdrop-blur-glass">
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 gradient-text-cyber text-shadow-glow">
-                🎲 Dice Challenge 🎲
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 text-shadow-glow">
+                🎲 Desafío de Dados 🎲
               </h1>
               <p className="text-xl text-white/90">
                 ¡Lanza los dados y descubre quién tiene la suerte de su lado! ✨
@@ -128,7 +128,7 @@ const DiceChallenge = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               {/* Player 1 */}
               <div className="text-center">
-                <h2 className="text-2xl font-bold text-white mb-4 flex items-center justify-center gap-2 gradient-text-cyber">
+                <h2 className="text-2xl font-bold text-white mb-4 flex items-center justify-center gap-2 text-shadow-glow">
                   <Users size={24} />
                   Jugador 1
                 </h2>
@@ -142,7 +142,7 @@ const DiceChallenge = () => {
 
               {/* Player 2 */}
               <div className="text-center">
-                <h2 className="text-2xl font-bold text-white mb-4 flex items-center justify-center gap-2 gradient-text-cyber">
+                <h2 className="text-2xl font-bold text-white mb-4 flex items-center justify-center gap-2 text-shadow-glow">
                   <Users size={24} />
                   Jugador 2
                 </h2>
@@ -201,7 +201,7 @@ const DiceChallenge = () => {
           {/* Statistics */}
           {gameHistory.length > 0 && (
             <div className="glass-effect rounded-3xl p-6 shadow-2xl border border-white/30 backdrop-blur-glass hover-glow">
-              <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2 gradient-text-cyber">
+              <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2 text-shadow-glow">
                 <Trophy size={24} />
                 Estadísticas del Juego
               </h3>

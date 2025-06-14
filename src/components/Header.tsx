@@ -18,7 +18,7 @@ const Header = () => {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-            My Portfolio ✨
+            Mi Portafolio ✨
           </div>
           
           {/* Desktop Menu */}
@@ -27,14 +27,14 @@ const Header = () => {
               onClick={() => scrollToSection('inicio')}
               className="text-white/90 hover:text-cyan-300 transition-colors duration-300 font-medium relative group"
             >
-              Home
+              Inicio
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 group-hover:w-full"></div>
             </button>
             <button 
               onClick={() => scrollToSection('portafolio')}
               className="text-white/90 hover:text-cyan-300 transition-colors duration-300 font-medium relative group"
             >
-              Portfolio
+              Portafolio
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 group-hover:w-full"></div>
             </button>
             <button 
@@ -48,7 +48,7 @@ const Header = () => {
               onClick={() => scrollToSection('contacto')}
               className="text-white/90 hover:text-cyan-300 transition-colors duration-300 font-medium relative group"
             >
-              Contact
+              Contacto
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 group-hover:w-full"></div>
             </button>
           </div>
@@ -70,13 +70,13 @@ const Header = () => {
                 onClick={() => scrollToSection('inicio')}
                 className="text-white/90 hover:text-cyan-300 transition-colors duration-300 text-left font-medium"
               >
-                Home
+                Inicio
               </button>
               <button 
                 onClick={() => scrollToSection('portafolio')}
                 className="text-white/90 hover:text-cyan-300 transition-colors duration-300 text-left font-medium"
               >
-                Portfolio
+                Portafolio
               </button>
               <button 
                 onClick={() => scrollToSection('blog')}
@@ -88,7 +88,7 @@ const Header = () => {
                 onClick={() => scrollToSection('contacto')}
                 className="text-white/90 hover:text-cyan-300 transition-colors duration-300 text-left font-medium"
               >
-                Contact
+                Contacto
               </button>
             </div>
           </div>

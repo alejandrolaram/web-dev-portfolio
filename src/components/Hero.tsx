@@ -18,13 +18,13 @@ const Hero = () => {
             {/* Frutiger Aero style header with glass morphism */}
             <div className="flex justify-center mb-8">
               <div className="bg-white/20 backdrop-blur-md rounded-full px-8 py-2 border border-white/30 shadow-xl">
-                <span className="text-white/90 font-medium tracking-wide">✨ Welcome to the Future ✨</span>
+                <span className="text-white/90 font-medium tracking-wide">✨ Bienvenido al Futuro ✨</span>
               </div>
             </div>
             
             <h1 className="text-6xl md:text-8xl font-bold mb-6 font-sans">
               <span className="bg-gradient-to-r from-white via-cyan-200 to-blue-200 bg-clip-text text-transparent drop-shadow-2xl">
-                Developer
+                Desarrollador
               </span>
               <br />
               <span className="bg-gradient-to-r from-green-300 via-blue-300 to-purple-300 bg-clip-text text-transparent">
@@ -34,7 +34,7 @@ const Hero = () => {
             
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 mb-8 border border-white/20 shadow-2xl max-w-2xl mx-auto">
               <p className="text-xl md:text-2xl text-white/90 mb-4 leading-relaxed">
-                Creating amazing web experiences with cutting-edge technology
+                Creando experiencias web increíbles con tecnología de vanguardia
               </p>
               <div className="flex flex-wrap justify-center gap-3">
                 {['HTML5', 'CSS3', 'JavaScript', 'React', 'Node.js', 'PostgreSQL'].map((tech) => (
@@ -53,13 +53,13 @@ const Hero = () => {
                   boxShadow: '0 8px 32px rgba(6, 182, 212, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
                 }}
               >
-                🚀 View Projects
+                🚀 Ver Proyectos
               </button>
               <button 
                 onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}
                 className="bg-white/20 backdrop-blur-md text-white border-2 border-white/40 px-8 py-4 rounded-xl font-semibold hover:bg-white/30 transition-all duration-300 shadow-xl"
               >
-                💬 Contact Me
+                💬 Contáctame
               </button>
             </div>
 
@@ -68,24 +68,24 @@ const Hero = () => {
                 <div className="bg-gradient-to-br from-cyan-400 to-blue-500 p-4 rounded-2xl mb-4 mx-auto w-fit shadow-xl">
                   <Code className="text-white" size={32} />
                 </div>
-                <h3 className="font-bold text-white mb-2 text-xl">Frontend Magic</h3>
-                <p className="text-white/80 text-center">Modern & responsive interfaces with React</p>
+                <h3 className="font-bold text-white mb-2 text-xl">Magia Frontend</h3>
+                <p className="text-white/80 text-center">Interfaces modernas y responsivas con React</p>
               </div>
               
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:shadow-2xl border border-white/20 transition-all duration-300 hover:scale-105">
                 <div className="bg-gradient-to-br from-pink-400 to-purple-500 p-4 rounded-2xl mb-4 mx-auto w-fit shadow-xl">
                   <Rocket className="text-white" size={32} />
                 </div>
-                <h3 className="font-bold text-white mb-2 text-xl">Backend Power</h3>
-                <p className="text-white/80 text-center">Robust APIs with Node.js & Express</p>
+                <h3 className="font-bold text-white mb-2 text-xl">Poder Backend</h3>
+                <p className="text-white/80 text-center">APIs robustas con Node.js y Express</p>
               </div>
               
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:shadow-2xl border border-white/20 transition-all duration-300 hover:scale-105">
                 <div className="bg-gradient-to-br from-green-400 to-emerald-500 p-4 rounded-2xl mb-4 mx-auto w-fit shadow-xl">
                   <Zap className="text-white" size={32} />
                 </div>
-                <h3 className="font-bold text-white mb-2 text-xl">Database Excellence</h3>
-                <p className="text-white/80 text-center">Efficient management with PostgreSQL</p>
+                <h3 className="font-bold text-white mb-2 text-xl">Excelencia en Bases de Datos</h3>
+                <p className="text-white/80 text-center">Gestión eficiente con PostgreSQL</p>
               </div>
             </div>
           </div>

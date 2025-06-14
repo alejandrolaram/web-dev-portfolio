@@ -6,41 +6,41 @@ import { Link } from 'react-router-dom';
 const Portfolio = () => {
   const projects = [
     {
-      title: "Dice Challenge",
-      description: "Interactive dice game with modern interface and smooth animations. Built with vanilla JavaScript and CSS3.",
+      title: "Desafío de Dados",
+      description: "Juego interactivo de dados con interfaz moderna y animaciones suaves. Construido con JavaScript vanilla y CSS3.",
       icon: <Dice1 className="text-white" size={28} />,
       tech: ["React", "TypeScript", "Tailwind CSS"],
-      status: "Completed",
+      status: "Completado",
       gradient: "from-cyan-400 to-blue-500",
       demoUrl: "/dice-challenge",
       isActive: true
     },
     {
-      title: "Drum Kit",
-      description: "Virtual drum kit with authentic sounds and tactile response. Intuitive interface for creating rhythms.",
+      title: "Batería Virtual",
+      description: "Batería virtual con sonidos auténticos y respuesta táctil. Interfaz intuitiva para crear ritmos.",
       icon: <Music className="text-white" size={28} />,
       tech: ["React", "TypeScript", "Web Audio API", "Tailwind CSS"],
-      status: "Completed",
+      status: "Completado",
       gradient: "from-pink-400 to-purple-500",
       demoUrl: "/drum-kit",
       isActive: true
     },
     {
       title: "Keeper App",
-      description: "Note management application with full CRUD functionality. Inspired by Google Keep.",
+      description: "Aplicación de gestión de notas con funcionalidad CRUD completa. Inspirada en Google Keep.",
       icon: <StickyNote className="text-white" size={28} />,
       tech: ["React", "TypeScript", "Local Storage", "Tailwind CSS"],
-      status: "Completed",
+      status: "Completado",
       gradient: "from-yellow-400 to-orange-500",
       demoUrl: "/keeper-app",
       isActive: true
     },
     {
-      title: "To-Do List",
-      description: "Advanced task list with categories, deadlines and complete functionality.",
+      title: "Lista de Tareas",
+      description: "Lista de tareas avanzada con categorías, fechas límite y funcionalidad completa.",
       icon: <CheckSquare className="text-white" size={28} />,
       tech: ["React", "TypeScript", "Local Storage", "Tailwind CSS"],
-      status: "Completed",
+      status: "Completado",
       gradient: "from-green-400 to-emerald-500",
       demoUrl: "/todo-list",
       isActive: true
@@ -60,11 +60,11 @@ const Portfolio = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 mb-8 border border-white/20 shadow-2xl max-w-4xl mx-auto">
             <h2 className="text-5xl md:text-6xl font-bold mb-6">
               <span className="bg-gradient-to-r from-white via-cyan-200 to-blue-200 bg-clip-text text-transparent">
-                My Portfolio
+                Mi Portafolio
               </span>
             </h2>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              A collection of projects showcasing my full stack web development skills
+              Una colección de proyectos que muestran mis habilidades de desarrollo web full stack
             </p>
           </div>
         </div>
@@ -124,7 +124,7 @@ const Portfolio = () => {
                   )}
                   <button className="flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm text-white rounded-xl transition-colors duration-300 cursor-not-allowed border border-white/30">
                     <Github size={18} />
-                    Code
+                    Código
                   </button>
                 </div>
               </div>
@@ -135,10 +135,10 @@ const Portfolio = () => {
         <div className="text-center mt-16">
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 max-w-2xl mx-auto border border-white/20 shadow-2xl">
             <p className="text-white text-xl mb-2">
-              ✨ All projects are completed and functional ✨
+              ✨ Todos los proyectos están completados y funcionales ✨
             </p>
             <p className="text-white/80">
-              Each project demonstrates different aspects of modern web development
+              Cada proyecto demuestra diferentes aspectos del desarrollo web moderno
             </p>
           </div>
         </div>
