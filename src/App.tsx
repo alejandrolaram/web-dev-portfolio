@@ -6,6 +6,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import BlogPost1 from "./pages/BlogPost1";
+import BlogPost2 from "./pages/BlogPost2";
+import BlogPost3 from "./pages/BlogPost3";
 import DiceChallenge from "./components/DiceChallenge";
 import DrumKit from "./components/DrumKit";
 import KeeperApp from "./components/KeeperApp";
@@ -21,6 +24,9 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/blog/mi-viaje-desarrollo-web" element={<BlogPost1 />} />
+          <Route path="/blog/react-vs-javascript-vanilla" element={<BlogPost2 />} />
+          <Route path="/blog/optimizacion-seo-desarrolladores" element={<BlogPost3 />} />
           <Route path="/dice-challenge" element={<DiceChallenge />} />
           <Route path="/drum-kit" element={<DrumKit />} />
           <Route path="/keeper-app" element={<KeeperApp />} />

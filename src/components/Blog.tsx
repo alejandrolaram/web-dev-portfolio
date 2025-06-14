@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Blog = () => {
   const blogPosts = [
@@ -10,7 +10,8 @@ const Blog = () => {
       date: "2024-01-15",
       readTime: "5 min",
       category: "Experiencia Personal",
-      gradient: "from-cyan-400 to-blue-500"
+      gradient: "from-cyan-400 to-blue-500",
+      slug: "/blog/mi-viaje-desarrollo-web"
     },
     {
       title: "React vs JavaScript Vanilla: ¿Cuándo usar cada uno?",
@@ -18,7 +19,8 @@ const Blog = () => {
       date: "2024-01-10",
       readTime: "8 min",
       category: "Desarrollo Frontend",
-      gradient: "from-green-400 to-emerald-500"
+      gradient: "from-green-400 to-emerald-500",
+      slug: "/blog/react-vs-javascript-vanilla"
     },
     {
       title: "Optimización SEO para Desarrolladores",
@@ -26,7 +28,8 @@ const Blog = () => {
       date: "2024-01-05",
       readTime: "6 min",
       category: "SEO",
-      gradient: "from-pink-400 to-purple-500"
+      gradient: "from-pink-400 to-purple-500",
+      slug: "/blog/optimizacion-seo-desarrolladores"
     }
   ];
 
@@ -54,49 +57,54 @@ const Blog = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post, index) => (
-            <article 
+            <Link 
               key={index}
-              className="bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] transition-all duration-500 overflow-hidden group cursor-pointer border border-white/20 hover:scale-105"
+              to={post.slug}
+              className="block"
             >
-              <div className={`h-32 bg-gradient-to-r ${post.gradient} relative`}>
-                <div className="absolute inset-0 bg-white/20"></div>
-                <div className="absolute top-4 left-4">
-                  <span className="bg-white/90 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-full text-sm font-semibold border border-white/50 shadow-lg">
-                    {post.category}
-                  </span>
-                </div>
-              </div>
-
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors duration-300">
-                  {post.title}
-                </h3>
-
-                <p className="text-white/80 mb-4 line-clamp-3 leading-relaxed">
-                  {post.excerpt}
-                </p>
-
-                <div className="flex items-center justify-between text-sm text-white/70 mb-4">
-                  <div className="flex items-center gap-2">
-                    <Calendar size={16} />
-                    <span>{new Date(post.date).toLocaleDateString('es-ES', { 
-                      year: 'numeric', 
-                      month: 'long', 
-                      day: 'numeric' 
-                    })}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Clock size={16} />
-                    <span>{post.readTime}</span>
+              <article 
+                className="bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] transition-all duration-500 overflow-hidden group cursor-pointer border border-white/20 hover:scale-105 h-full"
+              >
+                <div className={`h-32 bg-gradient-to-r ${post.gradient} relative`}>
+                  <div className="absolute inset-0 bg-white/20"></div>
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-white/90 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-full text-sm font-semibold border border-white/50 shadow-lg">
+                      {post.category}
+                    </span>
                   </div>
                 </div>
 
-                <button className="flex items-center gap-2 text-cyan-300 font-semibold hover:gap-3 transition-all duration-300 hover:text-white">
-                  Leer más
-                  <ArrowRight size={16} />
-                </button>
-              </div>
-            </article>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors duration-300">
+                    {post.title}
+                  </h3>
+
+                  <p className="text-white/80 mb-4 line-clamp-3 leading-relaxed">
+                    {post.excerpt}
+                  </p>
+
+                  <div className="flex items-center justify-between text-sm text-white/70 mb-4">
+                    <div className="flex items-center gap-2">
+                      <Calendar size={16} />
+                      <span>{new Date(post.date).toLocaleDateString('es-ES', { 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric' 
+                      })}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Clock size={16} />
+                      <span>{post.readTime}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2 text-cyan-300 font-semibold group-hover:gap-3 transition-all duration-300 group-hover:text-white">
+                    Leer más
+                    <ArrowRight size={16} />
+                  </div>
+                </div>
+              </article>
+            </Link>
           ))}
         </div>
 
