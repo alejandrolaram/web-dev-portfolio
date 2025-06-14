@@ -3,8 +3,6 @@ import { Mail, Send, Github, Linkedin } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
     subject: '',
     message: ''
   });
@@ -25,9 +23,6 @@ const Contact = () => {
     const body = encodeURIComponent(
       `Hola Alejandro,
 
-Mi nombre es: ${formData.name}
-Mi email es: ${formData.email}
-
 Mensaje:
 ${formData.message}
 
@@ -43,8 +38,6 @@ Enviado desde tu portafolio web`
     
     // Limpiar el formulario después de enviarlo
     setFormData({
-      name: '',
-      email: '',
       subject: '',
       message: ''
     });
@@ -99,38 +92,6 @@ Enviado desde tu portafolio web`
             <h3 className="text-2xl font-bold text-white mb-6 text-shadow-glow">Envíame un Mensaje</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-white/90 mb-2">
-                  Nombre Completo
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  required
-                  className="w-full px-4 py-3 bg-white/90 border border-white/30 rounded-xl focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 text-gray-800 placeholder-gray-500 backdrop-blur-md"
-                  placeholder="Tu nombre completo"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-white/90 mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                  className="w-full px-4 py-3 bg-white/90 border border-white/30 rounded-xl focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 text-gray-800 placeholder-gray-500 backdrop-blur-md"
-                  placeholder="tu.email@ejemplo.com"
-                />
-              </div>
-
               <div>
                 <label htmlFor="subject" className="block text-sm font-semibold text-white/90 mb-2">
                   Asunto
