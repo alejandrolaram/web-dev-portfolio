@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { ExternalLink, Github, Dice1, Music, StickyNote, CheckSquare, Edit3 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Portfolio = () => {
   const projects = [
@@ -8,9 +8,11 @@ const Portfolio = () => {
       title: "Dice Challenge",
       description: "Juego interactivo de dados con interfaz moderna y animaciones fluidas. Desarrollado con JavaScript vanilla y CSS3.",
       icon: <Dice1 className="text-blue-400" size={24} />,
-      tech: ["HTML5", "CSS3", "JavaScript"],
-      status: "Próximamente",
-      gradient: "from-blue-500 to-cyan-500"
+      tech: ["React", "TypeScript", "Tailwind CSS"],
+      status: "Completado",
+      gradient: "from-blue-500 to-cyan-500",
+      demoUrl: "/dice-challenge",
+      isActive: true
     },
     {
       title: "Drum Kit",
@@ -18,7 +20,8 @@ const Portfolio = () => {
       icon: <Music className="text-purple-400" size={24} />,
       tech: ["HTML5", "CSS3", "JavaScript", "Web Audio API"],
       status: "Próximamente",
-      gradient: "from-purple-500 to-pink-500"
+      gradient: "from-purple-500 to-pink-500",
+      isActive: false
     },
     {
       title: "Keeper App",
@@ -26,7 +29,8 @@ const Portfolio = () => {
       icon: <StickyNote className="text-yellow-400" size={24} />,
       tech: ["React", "Node.js", "Express", "MongoDB"],
       status: "Próximamente",
-      gradient: "from-yellow-500 to-orange-500"
+      gradient: "from-yellow-500 to-orange-500",
+      isActive: false
     },
     {
       title: "To-Do List",
@@ -34,7 +38,8 @@ const Portfolio = () => {
       icon: <CheckSquare className="text-green-400" size={24} />,
       tech: ["React", "Node.js", "Express", "PostgreSQL"],
       status: "Próximamente",
-      gradient: "from-green-500 to-teal-500"
+      gradient: "from-green-500 to-teal-500",
+      isActive: false
     },
     {
       title: "Blog Web App",
@@ -42,7 +47,8 @@ const Portfolio = () => {
       icon: <Edit3 className="text-red-400" size={24} />,
       tech: ["React", "Node.js", "Express", "PostgreSQL"],
       status: "Próximamente",
-      gradient: "from-red-500 to-pink-500"
+      gradient: "from-red-500 to-pink-500",
+      isActive: false
     }
   ];
 
@@ -75,7 +81,11 @@ const Portfolio = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white">{project.title}</h3>
-                    <span className="text-sm text-orange-400 font-semibold">{project.status}</span>
+                    <span className={`text-sm font-semibold ${
+                      project.isActive ? 'text-green-400' : 'text-orange-400'
+                    }`}>
+                      {project.status}
+                    </span>
                   </div>
                 </div>
 
@@ -95,10 +105,20 @@ const Portfolio = () => {
                 </div>
 
                 <div className="flex gap-3">
-                  <button className="flex items-center gap-2 px-4 py-2 bg-gray-800 text-gray-400 rounded-lg transition-colors duration-300 cursor-not-allowed border border-gray-700">
-                    <ExternalLink size={16} />
-                    Demo
-                  </button>
+                  {project.isActive ? (
+                    <Link 
+                      to={project.demoUrl}
+                      className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300"
+                    >
+                      <ExternalLink size={16} />
+                      Demo
+                    </Link>
+                  ) : (
+                    <button className="flex items-center gap-2 px-4 py-2 bg-gray-800 text-gray-400 rounded-lg transition-colors duration-300 cursor-not-allowed border border-gray-700">
+                      <ExternalLink size={16} />
+                      Demo
+                    </button>
+                  )}
                   <button className="flex items-center gap-2 px-4 py-2 bg-gray-800 text-gray-400 rounded-lg transition-colors duration-300 cursor-not-allowed border border-gray-700">
                     <Github size={16} />
                     Código
