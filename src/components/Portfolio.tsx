@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ExternalLink, Github, Dice1, Music, StickyNote, CheckSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -130,17 +129,6 @@ const Portfolio = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="text-center mt-16">
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 max-w-2xl mx-auto border border-white/20 shadow-2xl">
-            <p className="text-white text-xl mb-2">
-              ✨ Todos los proyectos están completados y funcionales ✨
-            </p>
-            <p className="text-white/80">
-              Cada proyecto demuestra diferentes aspectos del desarrollo web moderno
-            </p>
-          </div>
         </div>
       </div>
     </section>
