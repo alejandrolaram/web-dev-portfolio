@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ExternalLink, Github, Dice1, Music, StickyNote, CheckSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -9,7 +10,6 @@ const Portfolio = () => {
       description: "Juego interactivo de dados con interfaz moderna y animaciones suaves. Construido con JavaScript vanilla y CSS3.",
       icon: <Dice1 className="text-white" size={28} />,
       tech: ["React", "TypeScript", "Tailwind CSS"],
-      status: "Completado",
       gradient: "from-cyan-400 to-blue-500",
       demoUrl: "/dice-challenge",
       isActive: true
@@ -19,7 +19,6 @@ const Portfolio = () => {
       description: "Batería virtual con sonidos auténticos y respuesta táctil. Interfaz intuitiva para crear ritmos.",
       icon: <Music className="text-white" size={28} />,
       tech: ["React", "TypeScript", "Web Audio API", "Tailwind CSS"],
-      status: "Completado",
       gradient: "from-pink-400 to-purple-500",
       demoUrl: "/drum-kit",
       isActive: true
@@ -29,7 +28,6 @@ const Portfolio = () => {
       description: "Aplicación de gestión de notas con funcionalidad CRUD completa. Inspirada en Google Keep.",
       icon: <StickyNote className="text-white" size={28} />,
       tech: ["React", "TypeScript", "Local Storage", "Tailwind CSS"],
-      status: "Completado",
       gradient: "from-yellow-400 to-orange-500",
       demoUrl: "/keeper-app",
       isActive: true
@@ -39,7 +37,6 @@ const Portfolio = () => {
       description: "Lista de tareas avanzada con categorías, fechas límite y funcionalidad completa.",
       icon: <CheckSquare className="text-white" size={28} />,
       tech: ["React", "TypeScript", "Local Storage", "Tailwind CSS"],
-      status: "Completado",
       gradient: "from-green-400 to-emerald-500",
       demoUrl: "/todo-list",
       isActive: true
@@ -85,9 +82,6 @@ const Portfolio = () => {
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-white">{project.title}</h3>
-                    <span className="text-green-300 font-semibold">
-                      ✅ {project.status}
-                    </span>
                   </div>
                 </div>
 
