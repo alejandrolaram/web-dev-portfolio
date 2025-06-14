@@ -3,8 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Importar fuente moderna para Frutiger Aero */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+/* Importar fuentes modernas para Frutiger Aero actualizado */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap');
 
 @layer base {
   :root {
@@ -55,9 +55,10 @@
   }
 
   body {
-    @apply bg-gradient-to-br from-cyan-500 via-blue-600 to-purple-700 text-white;
-    font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+    @apply bg-gradient-to-br from-emerald-400 via-teal-500 to-blue-600 text-white;
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
     font-feature-settings: 'cv03', 'cv04', 'cv11';
+    background-attachment: fixed;
   }
 
   html {
@@ -66,7 +67,7 @@
 }
 
 @layer utilities {
-  /* Utilidades Frutiger Aero */
+  /* Utilidades Frutiger Aero Nova */
   .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -74,97 +75,178 @@
     overflow: hidden;
   }
 
-  .text-shadow-glow {
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  .text-shadow-nova {
+    text-shadow: 0 0 30px rgba(34, 197, 94, 0.7), 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
-  .backdrop-blur-glass {
-    backdrop-filter: blur(16px) saturate(180%);
+  .backdrop-blur-nova {
+    backdrop-filter: blur(20px) saturate(200%) brightness(1.1);
   }
 
-  /* Gradientes Frutiger Aero */
-  .gradient-text-cyber {
-    background: linear-gradient(135deg, #00f5ff 0%, #0080ff 50%, #8000ff 100%);
+  /* Gradientes Frutiger Aero Nova */
+  .gradient-text-nova {
+    background: linear-gradient(135deg, #10b981 0%, #06b6d4 30%, #3b82f6 60%, #8b5cf6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .gradient-bg-glass {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+  .gradient-bg-nova {
+    background: linear-gradient(135deg, 
+      rgba(16, 185, 129, 0.15) 0%, 
+      rgba(6, 182, 212, 0.12) 25%,
+      rgba(59, 130, 246, 0.1) 50%,
+      rgba(139, 92, 246, 0.12) 75%,
+      rgba(236, 72, 153, 0.15) 100%);
+    backdrop-filter: blur(16px) saturate(180%) brightness(1.05);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 
+      0 8px 32px rgba(16, 185, 129, 0.15),
+      0 0 0 1px rgba(255, 255, 255, 0.1) inset;
   }
 
-  /* Animaciones Frutiger Aero */
-  .hover-glow {
-    transition: all 0.3s ease;
+  /* Animaciones Frutiger Aero Nova */
+  .hover-nova {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  .hover-glow:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 245, 255, 0.3);
-    filter: brightness(1.1);
+  .hover-nova:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+      0 25px 50px rgba(16, 185, 129, 0.25),
+      0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+    filter: brightness(1.15) saturate(1.2);
   }
 
-  .float-animation {
-    animation: float 6s ease-in-out infinite;
+  .float-nova {
+    animation: float-nova 8s ease-in-out infinite;
   }
 
-  @keyframes float {
+  @keyframes float-nova {
     0%, 100% {
-      transform: translateY(0px);
+      transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-15px) rotate(1deg);
     }
     50% {
-      transform: translateY(-20px);
+      transform: translateY(-25px) rotate(0deg);
+    }
+    75% {
+      transform: translateY(-10px) rotate(-1deg);
     }
   }
 
-  .pulse-slow {
-    animation: pulse-slow 4s ease-in-out infinite;
+  .pulse-nova {
+    animation: pulse-nova 3s ease-in-out infinite;
   }
 
-  @keyframes pulse-slow {
+  @keyframes pulse-nova {
     0%, 100% {
-      opacity: 0.3;
+      opacity: 0.4;
+      transform: scale(1);
     }
     50% {
-      opacity: 0.8;
+      opacity: 0.9;
+      transform: scale(1.05);
+    }
+  }
+
+  .shimmer-nova {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer-nova::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    animation: shimmer-nova 3s infinite;
+  }
+
+  @keyframes shimmer-nova {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
     }
   }
 }
 
-/* Scroll personalizado con estilo Frutiger Aero */
+/* Scroll personalizado con estilo Frutiger Aero Nova */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 14px;
 }
 
 ::-webkit-scrollbar-track {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
-  border-radius: 6px;
+  background: linear-gradient(135deg, 
+    rgba(16, 185, 129, 0.1) 0%, 
+    rgba(59, 130, 246, 0.1) 100%);
+  border-radius: 8px;
+  margin: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #00f5ff 0%, #0080ff 50%, #8000ff 100%);
-  border-radius: 6px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, 
+    #10b981 0%, 
+    #06b6d4 50%, 
+    #3b82f6 100%);
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #00d4ff 0%, #0066ff 50%, #6600ff 100%);
+  background: linear-gradient(135deg, 
+    #059669 0%, 
+    #0891b2 50%, 
+    #2563eb 100%);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.5);
 }
 
-/* Efectos de cristal para elementos */
-.glass-effect {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+/* Efectos de cristal Nova para elementos */
+.glass-nova {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.15) 0%, 
+    rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(20px) saturate(180%) brightness(1.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+    0 0 20px rgba(16, 185, 129, 0.1);
+}
+
+.glass-nova-hover:hover {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.2) 0%, 
+    rgba(255, 255, 255, 0.1) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 12px 48px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+    0 0 30px rgba(16, 185, 129, 0.2);
 }
 
 /* Optimizaciones de rendimiento */
 .will-change-transform {
   will-change: transform;
+}
+
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 /* Mejoras de accesibilidad */
@@ -183,4 +265,60 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
+  
+  .glass-nova {
+    backdrop-filter: blur(12px) saturate(150%);
+  }
+}
+
+@media (max-width: 480px) {
+  .hover-nova:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+}
+
+/* Modo oscuro mejorado */
+@media (prefers-color-scheme: dark) {
+  .glass-nova {
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.08) 0%, 
+      rgba(255, 255, 255, 0.03) 100%);
+  }
+}
+
+/* Efectos especiales Nova */
+.aurora-nova {
+  background: linear-gradient(135deg, 
+    rgba(16, 185, 129, 0.3) 0%,
+    rgba(6, 182, 212, 0.2) 25%,
+    rgba(59, 130, 246, 0.2) 50%,
+    rgba(139, 92, 246, 0.2) 75%,
+    rgba(236, 72, 153, 0.3) 100%);
+  background-size: 400% 400%;
+  animation: aurora-nova 8s ease-in-out infinite;
+}
+
+@keyframes aurora-nova {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.neon-nova {
+  box-shadow: 
+    0 0 5px rgba(16, 185, 129, 0.5),
+    0 0 10px rgba(16, 185, 129, 0.4),
+    0 0 15px rgba(16, 185, 129, 0.3),
+    0 0 20px rgba(16, 185, 129, 0.2);
+}
+
+.neon-nova:hover {
+  box-shadow: 
+    0 0 10px rgba(16, 185, 129, 0.8),
+    0 0 20px rgba(16, 185, 129, 0.6),
+    0 0 30px rgba(16, 185, 129, 0.4),
+    0 0 40px rgba(16, 185, 129, 0.2);
 }
