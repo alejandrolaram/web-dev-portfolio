@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ExternalLink, Github, Dice1, Music, StickyNote, CheckSquare, Edit3 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -18,37 +19,41 @@ const Portfolio = () => {
       title: "Drum Kit",
       description: "Kit de batería virtual con sonidos auténticos y respuesta táctil. Interfaz intuitiva para crear ritmos.",
       icon: <Music className="text-purple-400" size={24} />,
-      tech: ["HTML5", "CSS3", "JavaScript", "Web Audio API"],
-      status: "Próximamente",
+      tech: ["React", "TypeScript", "Web Audio API", "Tailwind CSS"],
+      status: "Completado",
       gradient: "from-purple-500 to-pink-500",
-      isActive: false
+      demoUrl: "/drum-kit",
+      isActive: true
     },
     {
       title: "Keeper App",
       description: "Aplicación de gestión de notas con funcionalidades completas de CRUD. Inspirada en Google Keep.",
       icon: <StickyNote className="text-yellow-400" size={24} />,
-      tech: ["React", "Node.js", "Express", "MongoDB"],
-      status: "Próximamente",
+      tech: ["React", "TypeScript", "Local Storage", "Tailwind CSS"],
+      status: "Completado",
       gradient: "from-yellow-500 to-orange-500",
-      isActive: false
+      demoUrl: "/keeper-app",
+      isActive: true
     },
     {
       title: "To-Do List",
-      description: "Lista de tareas avanzada con categorías, fechas límite y sincronización en tiempo real.",
+      description: "Lista de tareas avanzada con categorías, fechas límite y funcionalidades completas.",
       icon: <CheckSquare className="text-green-400" size={24} />,
-      tech: ["React", "Node.js", "Express", "PostgreSQL"],
-      status: "Próximamente",
+      tech: ["React", "TypeScript", "Local Storage", "Tailwind CSS"],
+      status: "Completado",
       gradient: "from-green-500 to-teal-500",
-      isActive: false
+      demoUrl: "/todo-list",
+      isActive: true
     },
     {
       title: "Blog Web App",
-      description: "Plataforma de blog completa con sistema de comentarios, categorías y panel de administración.",
+      description: "Plataforma de blog completa con sistema de comentarios, categorías y gestión de contenido.",
       icon: <Edit3 className="text-red-400" size={24} />,
-      tech: ["React", "Node.js", "Express", "PostgreSQL"],
-      status: "Próximamente",
+      tech: ["React", "TypeScript", "Context API", "Tailwind CSS"],
+      status: "Completado",
       gradient: "from-red-500 to-pink-500",
-      isActive: false
+      demoUrl: "/blog",
+      isActive: true
     }
   ];
 
@@ -131,10 +136,10 @@ const Portfolio = () => {
 
         <div className="text-center mt-12">
           <p className="text-gray-300 mb-4">
-            🚧 Estos proyectos están en desarrollo activo
+            ✅ Todos los proyectos están completados y funcionales
           </p>
           <p className="text-sm text-gray-400">
-            Siguiendo la estructura de trabajo definida, cada proyecto será implementado con las mejores prácticas
+            Cada proyecto demuestra diferentes aspectos del desarrollo web moderno
           </p>
         </div>
       </div>
