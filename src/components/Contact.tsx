@@ -110,7 +110,7 @@ Enviado desde tu portafolio web`
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 glass-effect border border-white/30 rounded-xl focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 text-white placeholder-white/60 backdrop-blur-md"
+                  className="w-full px-4 py-3 bg-white/90 border border-white/30 rounded-xl focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 text-gray-800 placeholder-gray-500 backdrop-blur-md"
                   placeholder="Tu nombre completo"
                 />
               </div>
@@ -126,7 +126,7 @@ Enviado desde tu portafolio web`
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 glass-effect border border-white/30 rounded-xl focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 text-white placeholder-white/60 backdrop-blur-md"
+                  className="w-full px-4 py-3 bg-white/90 border border-white/30 rounded-xl focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 text-gray-800 placeholder-gray-500 backdrop-blur-md"
                   placeholder="tu.email@ejemplo.com"
                 />
               </div>
@@ -142,7 +142,7 @@ Enviado desde tu portafolio web`
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 glass-effect border border-white/30 rounded-xl focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 text-white placeholder-white/60 backdrop-blur-md"
+                  className="w-full px-4 py-3 bg-white/90 border border-white/30 rounded-xl focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 text-gray-800 placeholder-gray-500 backdrop-blur-md"
                   placeholder="¿De qué quieres hablar?"
                 />
               </div>
@@ -158,7 +158,7 @@ Enviado desde tu portafolio web`
                   onChange={handleInputChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 glass-effect border border-white/30 rounded-xl focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 resize-none text-white placeholder-white/60 backdrop-blur-md"
+                  className="w-full px-4 py-3 bg-white/90 border border-white/30 rounded-xl focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 resize-none text-gray-800 placeholder-gray-500 backdrop-blur-md"
                   placeholder="Cuéntame sobre tu proyecto o idea..."
                 />
               </div>
