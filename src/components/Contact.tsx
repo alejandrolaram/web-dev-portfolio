@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, MessageCircle } from 'lucide-react';
 
@@ -38,7 +37,7 @@ const Contact = () => {
         <div className="text-center mb-16">
           <div className="glass-effect rounded-3xl p-8 mb-8 border border-white/30 shadow-2xl max-w-4xl mx-auto backdrop-blur-glass">
             <h2 className="text-5xl md:text-6xl font-bold mb-6 font-inter">
-              <span className="gradient-text-cyber text-shadow-glow">
+              <span className="text-white text-shadow-glow">
                 Contacto ✨
               </span>
             </h2>
@@ -52,7 +51,7 @@ const Contact = () => {
           {/* Información de contacto */}
           <div className="space-y-8">
             <div className="glass-effect rounded-2xl p-8 border border-white/30 shadow-2xl backdrop-blur-glass hover-glow">
-              <h3 className="text-2xl font-bold text-white mb-6 gradient-text-cyber">Información de Contacto</h3>
+              <h3 className="text-2xl font-bold text-white mb-6 text-shadow-glow">Información de Contacto</h3>
               <div className="space-y-6">
                 <div className="flex items-center gap-4 p-4 glass-effect rounded-xl border border-white/20 hover-glow">
                   <div className="bg-gradient-to-r from-cyan-400 to-blue-500 p-3 rounded-full shadow-lg">
@@ -87,7 +86,7 @@ const Contact = () => {
             </div>
 
             <div className="glass-effect rounded-2xl p-8 border border-white/30 shadow-2xl backdrop-blur-glass hover-glow">
-              <h4 className="text-xl font-bold text-white mb-4 gradient-text-cyber">Redes Sociales</h4>
+              <h4 className="text-xl font-bold text-white mb-4 text-shadow-glow">Redes Sociales</h4>
               <div className="flex gap-4">
                 <a 
                   href="#" 
@@ -96,7 +95,9 @@ const Contact = () => {
                   <Github className="text-white" size={24} />
                 </a>
                 <a 
-                  href="#" 
+                  href="https://www.linkedin.com/in/alejandrolaramoreno/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-gradient-to-r from-blue-500 to-blue-700 p-3 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 border border-white/30 glass-effect"
                 >
                   <Linkedin className="text-white" size={24} />
@@ -113,7 +114,7 @@ const Contact = () => {
 
           {/* Formulario de contacto */}
           <div className="glass-effect rounded-3xl p-8 shadow-2xl border border-white/30 backdrop-blur-glass hover-glow">
-            <h3 className="text-2xl font-bold text-white mb-6 gradient-text-cyber">Envíame un Mensaje</h3>
+            <h3 className="text-2xl font-bold text-white mb-6 text-shadow-glow">Envíame un Mensaje</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
