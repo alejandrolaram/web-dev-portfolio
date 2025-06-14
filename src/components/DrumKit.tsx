@@ -7,15 +7,15 @@ const DrumKit = () => {
   const [lastPlayed, setLastPlayed] = useState<string | null>(null);
 
   const drumSounds = [
-    { key: 'Q', name: 'Kick', sound: 'kick', color: 'from-red-500 to-red-700' },
-    { key: 'W', name: 'Snare', sound: 'snare', color: 'from-blue-500 to-blue-700' },
-    { key: 'E', name: 'Hi-Hat', sound: 'hihat', color: 'from-yellow-500 to-yellow-700' },
-    { key: 'A', name: 'Open Hat', sound: 'openhat', color: 'from-green-500 to-green-700' },
-    { key: 'S', name: 'Ride', sound: 'ride', color: 'from-purple-500 to-purple-700' },
-    { key: 'D', name: 'Crash', sound: 'crash', color: 'from-pink-500 to-pink-700' },
-    { key: 'Z', name: 'Tom 1', sound: 'tom1', color: 'from-indigo-500 to-indigo-700' },
-    { key: 'X', name: 'Tom 2', sound: 'tom2', color: 'from-teal-500 to-teal-700' },
-    { key: 'C', name: 'Tom 3', sound: 'tom3', color: 'from-orange-500 to-orange-700' }
+    { key: 'Q', name: 'Kick', sound: 'kick', color: 'from-red-400 to-pink-600' },
+    { key: 'W', name: 'Snare', sound: 'snare', color: 'from-blue-400 to-cyan-600' },
+    { key: 'E', name: 'Hi-Hat', sound: 'hihat', color: 'from-yellow-400 to-orange-600' },
+    { key: 'A', name: 'Open Hat', sound: 'openhat', color: 'from-green-400 to-emerald-600' },
+    { key: 'S', name: 'Ride', sound: 'ride', color: 'from-purple-400 to-violet-600' },
+    { key: 'D', name: 'Crash', sound: 'crash', color: 'from-pink-400 to-rose-600' },
+    { key: 'Z', name: 'Tom 1', sound: 'tom1', color: 'from-indigo-400 to-blue-600' },
+    { key: 'X', name: 'Tom 2', sound: 'tom2', color: 'from-teal-400 to-cyan-600' },
+    { key: 'C', name: 'Tom 3', sound: 'tom3', color: 'from-orange-400 to-red-600' }
   ];
 
   const createDrumSound = (soundName: string) => {
@@ -242,13 +242,20 @@ const DrumKit = () => {
   }, [handleKeyPress]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-black">
+    <div className="min-h-screen bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-600 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-10 left-10 w-64 h-64 bg-gradient-to-r from-yellow-300/30 to-pink-300/30 rounded-full blur-3xl pulse-slow"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-green-300/30 to-blue-300/30 rounded-full blur-3xl pulse-slow"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-purple-300/20 to-cyan-300/20 rounded-full blur-3xl pulse-slow"></div>
+      </div>
+
       {/* Navigation Header */}
-      <nav className="bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-700 p-4">
+      <nav className="glass-effect shadow-2xl border-b border-white/30 p-4 relative z-50">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <Link 
             to="/" 
-            className="flex items-center gap-2 text-white hover:text-purple-400 transition-colors duration-300"
+            className="flex items-center gap-2 text-white hover:text-purple-200 transition-colors duration-300 font-medium"
           >
             <ArrowLeft size={20} />
             <span className="font-semibold">Volver al Portafolio</span>
@@ -256,14 +263,14 @@ const DrumKit = () => {
           
           <Link 
             to="/" 
-            className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
+            className="text-2xl font-bold gradient-text-cyber text-shadow-glow"
           >
-            Mi Portafolio
+            Mi Portafolio ✨
           </Link>
           
           <Link 
             to="/" 
-            className="flex items-center gap-2 text-white hover:text-purple-400 transition-colors duration-300"
+            className="flex items-center gap-2 text-white hover:text-purple-200 transition-colors duration-300 font-medium"
           >
             <Home size={20} />
             <span className="font-semibold">Inicio</span>
@@ -271,52 +278,54 @@ const DrumKit = () => {
         </div>
       </nav>
 
-      <div className="p-6">
+      <div className="p-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-              🥁 Drum Kit Virtual 🥁
-            </h1>
-            <p className="text-xl text-gray-300 mb-6">
-              ¡Toca la batería con tu teclado! Presiona las teclas Q, W, E, A, S, D, Z, X, C
-            </p>
-            
-            <button
-              onClick={() => setIsMuted(!isMuted)}
-              className={`flex items-center gap-2 mx-auto px-6 py-3 rounded-lg font-bold transition-colors duration-300 ${
-                isMuted 
-                  ? 'bg-red-600 hover:bg-red-700 text-white' 
-                  : 'bg-green-600 hover:bg-green-700 text-white'
-              }`}
-            >
-              {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
-              {isMuted ? 'Activar Sonido' : 'Silenciar'}
-            </button>
+            <div className="glass-effect rounded-3xl p-8 mb-8 border border-white/30 shadow-2xl backdrop-blur-glass">
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 gradient-text-cyber text-shadow-glow">
+                🥁 Drum Kit Virtual 🥁
+              </h1>
+              <p className="text-xl text-white/90 mb-6">
+                ¡Toca la batería con tu teclado! Presiona las teclas Q, W, E, A, S, D, Z, X, C ✨
+              </p>
+              
+              <button
+                onClick={() => setIsMuted(!isMuted)}
+                className={`flex items-center gap-2 mx-auto px-6 py-3 rounded-xl font-bold transition-all duration-300 border border-white/30 ${
+                  isMuted 
+                    ? 'bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-400 hover:to-pink-500 text-white' 
+                    : 'bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-white'
+                } text-shadow-glow shadow-xl hover:scale-105`}
+              >
+                {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+                {isMuted ? 'Activar Sonido' : 'Silenciar'}
+              </button>
+            </div>
           </div>
 
           {/* Drum Kit */}
-          <div className="bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-gray-700">
+          <div className="glass-effect rounded-3xl p-8 shadow-2xl border border-white/30 backdrop-blur-glass hover-glow">
             <div className="grid grid-cols-3 gap-6 max-w-4xl mx-auto">
               {drumSounds.map((drum) => (
                 <button
                   key={drum.key}
                   onClick={() => playSound(drum.sound)}
-                  className={`relative group h-32 rounded-xl bg-gradient-to-br ${drum.color} 
+                  className={`relative group h-32 rounded-2xl bg-gradient-to-br ${drum.color} 
                     transform transition-all duration-200 hover:scale-105 active:scale-95
                     ${lastPlayed === drum.sound ? 'scale-110 shadow-2xl ring-4 ring-white/50' : ''}
-                    shadow-lg hover:shadow-xl border-2 border-white/20`}
+                    shadow-xl hover:shadow-2xl border-2 border-white/30 glass-effect`}
                 >
-                  <div className="absolute inset-0 bg-white/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                  <div className="absolute inset-0 bg-white/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                   
                   <div className="relative z-10 h-full flex flex-col items-center justify-center text-white">
-                    <div className="text-3xl font-bold mb-2">{drum.key}</div>
-                    <div className="text-lg font-semibold">{drum.name}</div>
+                    <div className="text-3xl font-bold mb-2 text-shadow-glow">{drum.key}</div>
+                    <div className="text-lg font-semibold text-shadow-glow">{drum.name}</div>
                   </div>
                   
                   {/* Efecto de onda al tocar */}
                   {lastPlayed === drum.sound && (
-                    <div className="absolute inset-0 rounded-xl bg-white/30 animate-ping" />
+                    <div className="absolute inset-0 rounded-2xl bg-white/30 animate-ping" />
                   )}
                 </button>
               ))}
@@ -324,14 +333,14 @@ const DrumKit = () => {
 
             {/* Instrucciones */}
             <div className="mt-8 text-center">
-              <h3 className="text-2xl font-bold text-white mb-4">🎵 Instrucciones</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-300">
-                <div className="bg-gray-700/50 p-4 rounded-lg">
-                  <h4 className="font-bold mb-2">🎹 Controles de Teclado</h4>
+              <h3 className="text-2xl font-bold text-white mb-4 gradient-text-cyber">🎵 Instrucciones</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-white/80">
+                <div className="glass-effect p-4 rounded-2xl border border-white/20">
+                  <h4 className="font-bold mb-2 text-white">🎹 Controles de Teclado</h4>
                   <p>Usa las teclas Q, W, E, A, S, D, Z, X, C para tocar diferentes elementos de la batería</p>
                 </div>
-                <div className="bg-gray-700/50 p-4 rounded-lg">
-                  <h4 className="font-bold mb-2">🖱️ Controles de Mouse</h4>
+                <div className="glass-effect p-4 rounded-2xl border border-white/20">
+                  <h4 className="font-bold mb-2 text-white">🖱️ Controles de Mouse</h4>
                   <p>Haz clic en cualquier pad de la batería para reproducir el sonido correspondiente</p>
                 </div>
               </div>
@@ -341,8 +350,8 @@ const DrumKit = () => {
           {/* Last Played Info */}
           {lastPlayed && (
             <div className="mt-6 text-center">
-              <div className="inline-block bg-purple-600/20 border border-purple-400 px-6 py-3 rounded-lg">
-                <span className="text-purple-300 font-bold">
+              <div className="inline-block glass-effect border border-purple-400/50 px-6 py-3 rounded-2xl">
+                <span className="text-purple-200 font-bold gradient-text-cyber">
                   🎵 Reproduciendo: {drumSounds.find(d => d.sound === lastPlayed)?.name}
                 </span>
               </div>

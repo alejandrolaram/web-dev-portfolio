@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Home, ArrowLeft, Plus, Trash2, Check, Clock, Flag, Filter } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -29,9 +28,9 @@ const TodoList = () => {
 
   const categories = ['personal', 'trabajo', 'estudio', 'hogar', 'salud'];
   const priorities = [
-    { value: 'low', label: 'Baja', color: 'bg-green-500' },
-    { value: 'medium', label: 'Media', color: 'bg-yellow-500' },
-    { value: 'high', label: 'Alta', color: 'bg-red-500' }
+    { value: 'low', label: 'Baja', color: 'from-green-400 to-green-600' },
+    { value: 'medium', label: 'Media', color: 'from-yellow-400 to-orange-500' },
+    { value: 'high', label: 'Alta', color: 'from-pink-400 to-red-500' }
   ];
 
   useEffect(() => {
@@ -110,13 +109,20 @@ const TodoList = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-green-50">
+    <div className="min-h-screen bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-10 left-10 w-64 h-64 bg-gradient-to-r from-green-300/30 to-emerald-300/30 rounded-full blur-3xl pulse-slow"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-blue-300/30 to-cyan-300/30 rounded-full blur-3xl pulse-slow"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-purple-300/20 to-pink-300/20 rounded-full blur-3xl pulse-slow"></div>
+      </div>
+
       {/* Navigation Header */}
-      <nav className="bg-white shadow-lg border-b border-gray-200 p-4">
+      <nav className="glass-effect shadow-2xl border-b border-white/30 p-4 relative z-50">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <Link 
             to="/" 
-            className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition-colors duration-300"
+            className="flex items-center gap-2 text-white hover:text-green-200 transition-colors duration-300 font-medium"
           >
             <ArrowLeft size={20} />
             <span className="font-semibold">Volver al Portafolio</span>
@@ -124,14 +130,14 @@ const TodoList = () => {
           
           <Link 
             to="/" 
-            className="text-2xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent"
+            className="text-2xl font-bold gradient-text-cyber text-shadow-glow"
           >
-            Mi Portafolio
+            Mi Portafolio ✨
           </Link>
           
           <Link 
             to="/" 
-            className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition-colors duration-300"
+            className="flex items-center gap-2 text-white hover:text-green-200 transition-colors duration-300 font-medium"
           >
             <Home size={20} />
             <span className="font-semibold">Inicio</span>
@@ -139,46 +145,48 @@ const TodoList = () => {
         </div>
       </nav>
 
-      <div className="p-6">
+      <div className="p-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-4">
-              ✅ To-Do List Pro ✅
-            </h1>
-            <p className="text-xl text-gray-600 mb-6">
-              Organiza tus tareas de manera eficiente y productiva
-            </p>
+            <div className="glass-effect rounded-3xl p-8 mb-8 border border-white/30 shadow-2xl backdrop-blur-glass">
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 gradient-text-cyber text-shadow-glow">
+                ✅ To-Do List Pro ✅
+              </h1>
+              <p className="text-xl text-white/90 mb-6">
+                Organiza tus tareas de manera eficiente y productiva ✨
+              </p>
+            </div>
           </div>
 
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-            <div className="bg-white rounded-lg shadow-md p-4 border-l-4 border-blue-500">
-              <div className="text-2xl font-bold text-blue-600">{stats.total}</div>
-              <div className="text-gray-600">Total</div>
+            <div className="glass-effect rounded-2xl shadow-xl p-4 border border-cyan-300/30 hover-glow">
+              <div className="text-2xl font-bold text-cyan-200 text-shadow-glow">{stats.total}</div>
+              <div className="text-white/80">Total</div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-4 border-l-4 border-yellow-500">
-              <div className="text-2xl font-bold text-yellow-600">{stats.pending}</div>
-              <div className="text-gray-600">Pendientes</div>
+            <div className="glass-effect rounded-2xl shadow-xl p-4 border border-yellow-300/30 hover-glow">
+              <div className="text-2xl font-bold text-yellow-200 text-shadow-glow">{stats.pending}</div>
+              <div className="text-white/80">Pendientes</div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-4 border-l-4 border-green-500">
-              <div className="text-2xl font-bold text-green-600">{stats.completed}</div>
-              <div className="text-gray-600">Completadas</div>
+            <div className="glass-effect rounded-2xl shadow-xl p-4 border border-green-300/30 hover-glow">
+              <div className="text-2xl font-bold text-green-200 text-shadow-glow">{stats.completed}</div>
+              <div className="text-white/80">Completadas</div>
             </div>
-            <div className="bg-white rounded-lg shadow-md p-4 border-l-4 border-red-500">
-              <div className="text-2xl font-bold text-red-600">{stats.highPriority}</div>
-              <div className="text-gray-600">Alta Prioridad</div>
+            <div className="glass-effect rounded-2xl shadow-xl p-4 border border-pink-300/30 hover-glow">
+              <div className="text-2xl font-bold text-pink-200 text-shadow-glow">{stats.highPriority}</div>
+              <div className="text-white/80">Alta Prioridad</div>
             </div>
           </div>
 
           {/* Controls */}
-          <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+          <div className="glass-effect rounded-2xl shadow-xl p-6 mb-8 border border-white/30 backdrop-blur-glass">
             <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
               <div className="flex gap-4">
                 <select
                   value={filter}
                   onChange={(e) => setFilter(e.target.value as any)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="px-4 py-2 glass-effect border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white backdrop-blur-md"
                 >
                   <option value="all">Todas</option>
                   <option value="pending">Pendientes</option>
@@ -188,7 +196,7 @@ const TodoList = () => {
                 <select
                   value={categoryFilter}
                   onChange={(e) => setCategoryFilter(e.target.value)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="px-4 py-2 glass-effect border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white backdrop-blur-md"
                 >
                   <option value="all">Todas las categorías</option>
                   {categories.map(cat => (
@@ -199,7 +207,7 @@ const TodoList = () => {
               
               <button
                 onClick={() => setIsCreating(true)}
-                className="flex items-center gap-2 px-6 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg font-semibold transition-colors duration-300"
+                className="flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-white rounded-xl font-semibold transition-all duration-300 border border-white/30 hover:scale-105 shadow-xl text-shadow-glow"
               >
                 <Plus size={20} />
                 Nueva Tarea
@@ -209,8 +217,8 @@ const TodoList = () => {
 
           {/* Create Todo Form */}
           {isCreating && (
-            <div className="bg-white rounded-lg shadow-lg p-6 mb-8 border-l-4 border-green-500">
-              <h3 className="text-lg font-bold text-gray-800 mb-4">Crear Nueva Tarea</h3>
+            <div className="glass-effect rounded-2xl shadow-2xl p-6 mb-8 border border-white/30 backdrop-blur-glass">
+              <h3 className="text-lg font-bold text-white mb-4 gradient-text-cyber">Crear Nueva Tarea</h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <input
@@ -218,13 +226,13 @@ const TodoList = () => {
                   placeholder="Título de la tarea..."
                   value={newTodo.title}
                   onChange={(e) => setNewTodo({ ...newTodo, title: e.target.value })}
-                  className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="p-3 glass-effect border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white placeholder-white/60 backdrop-blur-md"
                 />
                 
                 <select
                   value={newTodo.category}
                   onChange={(e) => setNewTodo({ ...newTodo, category: e.target.value })}
-                  className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="p-3 glass-effect border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white backdrop-blur-md"
                 >
                   {categories.map(cat => (
                     <option key={cat} value={cat}>{cat.charAt(0).toUpperCase() + cat.slice(1)}</option>
@@ -237,14 +245,14 @@ const TodoList = () => {
                 value={newTodo.description}
                 onChange={(e) => setNewTodo({ ...newTodo, description: e.target.value })}
                 rows={3}
-                className="w-full mb-4 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 resize-none"
+                className="w-full mb-4 p-3 glass-effect border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 resize-none text-white placeholder-white/60 backdrop-blur-md"
               />
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <select
                   value={newTodo.priority}
                   onChange={(e) => setNewTodo({ ...newTodo, priority: e.target.value as any })}
-                  className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="p-3 glass-effect border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white backdrop-blur-md"
                 >
                   {priorities.map(priority => (
                     <option key={priority.value} value={priority.value}>
@@ -257,20 +265,20 @@ const TodoList = () => {
                   type="date"
                   value={newTodo.dueDate}
                   onChange={(e) => setNewTodo({ ...newTodo, dueDate: e.target.value })}
-                  className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="p-3 glass-effect border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white backdrop-blur-md"
                 />
               </div>
               
               <div className="flex gap-4">
                 <button
                   onClick={addTodo}
-                  className="px-6 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg font-semibold transition-colors duration-300"
+                  className="px-6 py-2 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-white rounded-xl font-semibold transition-all duration-300 border border-white/30 text-shadow-glow"
                 >
                   Crear Tarea
                 </button>
                 <button
                   onClick={() => setIsCreating(false)}
-                  className="px-6 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded-lg font-semibold transition-colors duration-300"
+                  className="px-6 py-2 glass-effect hover:bg-white/20 text-white rounded-xl font-semibold transition-all duration-300 border border-white/30 text-shadow-glow"
                 >
                   Cancelar
                 </button>
@@ -287,21 +295,21 @@ const TodoList = () => {
               return (
                 <div
                   key={todo.id}
-                  className={`bg-white rounded-lg shadow-md p-4 border-l-4 transition-all duration-300 ${
+                  className={`glass-effect rounded-2xl shadow-xl p-4 border transition-all duration-300 backdrop-blur-glass hover-glow ${
                     todo.completed 
-                      ? 'border-gray-400 bg-gray-50' 
+                      ? 'border-white/20' 
                       : overdue 
-                        ? 'border-red-500' 
-                        : 'border-green-500'
+                        ? 'border-pink-400/50' 
+                        : 'border-white/30'
                   }`}
                 >
                   <div className="flex items-start gap-4">
                     <button
                       onClick={() => toggleTodo(todo.id)}
-                      className={`mt-1 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors duration-200 ${
+                      className={`mt-1 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all duration-200 ${
                         todo.completed
-                          ? 'bg-green-500 border-green-500 text-white'
-                          : 'border-gray-300 hover:border-green-500'
+                          ? 'bg-gradient-to-r from-green-400 to-emerald-500 border-green-400 text-white shadow-lg'
+                          : 'border-white/40 hover:border-green-400 glass-effect'
                       }`}
                     >
                       {todo.completed && <Check size={16} />}
@@ -310,32 +318,32 @@ const TodoList = () => {
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
                         <h3 className={`font-bold text-lg ${
-                          todo.completed ? 'line-through text-gray-500' : 'text-gray-800'
+                          todo.completed ? 'line-through text-white/60' : 'text-white text-shadow-glow'
                         }`}>
                           {todo.title}
                         </h3>
                         
-                        <span className={`px-2 py-1 rounded-full text-xs font-semibold text-white ${priority?.color}`}>
+                        <span className={`px-2 py-1 rounded-full text-xs font-semibold text-white bg-gradient-to-r ${priority?.color} shadow-lg`}>
                           {priority?.label}
                         </span>
                         
-                        <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">
+                        <span className="px-2 py-1 bg-gradient-to-r from-cyan-400/30 to-blue-400/30 text-cyan-200 rounded-full text-xs font-semibold border border-cyan-300/30">
                           {todo.category}
                         </span>
                       </div>
                       
                       {todo.description && (
-                        <p className={`text-gray-600 mb-2 ${
+                        <p className={`text-white/80 mb-2 ${
                           todo.completed ? 'line-through' : ''
                         }`}>
                           {todo.description}
                         </p>
                       )}
                       
-                      <div className="flex items-center gap-4 text-sm text-gray-500">
+                      <div className="flex items-center gap-4 text-sm text-white/70">
                         {todo.dueDate && (
                           <div className={`flex items-center gap-1 ${
-                            overdue && !todo.completed ? 'text-red-600 font-semibold' : ''
+                            overdue && !todo.completed ? 'text-pink-300 font-semibold' : ''
                           }`}>
                             <Clock size={14} />
                             {new Date(todo.dueDate).toLocaleDateString()}
@@ -351,7 +359,7 @@ const TodoList = () => {
                     
                     <button
                       onClick={() => deleteTodo(todo.id)}
-                      className="text-gray-500 hover:text-red-600 transition-colors duration-200"
+                      className="text-white/60 hover:text-pink-300 transition-colors duration-200"
                     >
                       <Trash2 size={20} />
                     </button>
@@ -363,11 +371,13 @@ const TodoList = () => {
 
           {filteredTodos.length === 0 && (
             <div className="text-center py-12">
-              <div className="text-6xl mb-4">📋</div>
-              <h3 className="text-xl font-bold text-gray-600 mb-2">No hay tareas que mostrar</h3>
-              <p className="text-gray-500">
-                {filter === 'all' ? 'Crea tu primera tarea para comenzar' : `No hay tareas ${filter === 'pending' ? 'pendientes' : 'completadas'}`}
-              </p>
+              <div className="glass-effect rounded-3xl p-12 border border-white/30 backdrop-blur-glass">
+                <div className="text-6xl mb-4">📋</div>
+                <h3 className="text-xl font-bold text-white mb-2 gradient-text-cyber">No hay tareas que mostrar</h3>
+                <p className="text-white/80">
+                  {filter === 'all' ? 'Crea tu primera tarea para comenzar' : `No hay tareas ${filter === 'pending' ? 'pendientes' : 'completadas'}`}
+                </p>
+              </div>
             </div>
           )}
         </div>

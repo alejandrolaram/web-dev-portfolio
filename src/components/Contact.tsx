@@ -21,95 +21,103 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Formulario enviado:', formData);
-    // Aquí implementarías la lógica de envío del formulario
     alert('¡Mensaje enviado! Te contactaré pronto.');
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
   return (
-    <section id="contacto" className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-      <div className="container mx-auto px-6">
+    <section id="contacto" className="py-20 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-10 left-10 w-64 h-64 bg-gradient-to-r from-pink-300/30 to-cyan-300/30 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-yellow-300/30 to-green-300/30 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-blue-300/20 to-purple-300/20 rounded-full blur-3xl animate-pulse delay-500"></div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Contacto
-            </span>
-          </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            ¿Tienes un proyecto en mente? ¡Hablemos y hagámoslo realidad juntos!
-          </p>
+          <div className="glass-effect rounded-3xl p-8 mb-8 border border-white/30 shadow-2xl max-w-4xl mx-auto backdrop-blur-glass">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 font-inter">
+              <span className="gradient-text-cyber text-shadow-glow">
+                Contacto ✨
+              </span>
+            </h2>
+            <p className="text-xl text-white/90 max-w-2xl mx-auto font-medium">
+              ¿Tienes un proyecto en mente? ¡Hablemos y hagámoslo realidad juntos! 🚀
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Información de contacto */}
           <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-6">Información de Contacto</h3>
-              <div className="space-y-4">
-                <div className="flex items-center gap-4 p-4 bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700">
-                  <div className="bg-blue-500/20 p-3 rounded-full">
-                    <Mail className="text-blue-400" size={20} />
+            <div className="glass-effect rounded-2xl p-8 border border-white/30 shadow-2xl backdrop-blur-glass hover-glow">
+              <h3 className="text-2xl font-bold text-white mb-6 gradient-text-cyber">Información de Contacto</h3>
+              <div className="space-y-6">
+                <div className="flex items-center gap-4 p-4 glass-effect rounded-xl border border-white/20 hover-glow">
+                  <div className="bg-gradient-to-r from-cyan-400 to-blue-500 p-3 rounded-full shadow-lg">
+                    <Mail className="text-white" size={20} />
                   </div>
                   <div>
-                    <p className="font-semibold text-white">Email</p>
-                    <p className="text-gray-300">tu.email@ejemplo.com</p>
+                    <p className="font-semibold text-white text-shadow-glow">Email</p>
+                    <p className="text-white/80">tu.email@ejemplo.com</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 p-4 bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700">
-                  <div className="bg-green-500/20 p-3 rounded-full">
-                    <Phone className="text-green-400" size={20} />
+                <div className="flex items-center gap-4 p-4 glass-effect rounded-xl border border-white/20 hover-glow">
+                  <div className="bg-gradient-to-r from-green-400 to-emerald-500 p-3 rounded-full shadow-lg">
+                    <Phone className="text-white" size={20} />
                   </div>
                   <div>
-                    <p className="font-semibold text-white">Teléfono</p>
-                    <p className="text-gray-300">+1 234 567 8900</p>
+                    <p className="font-semibold text-white text-shadow-glow">Teléfono</p>
+                    <p className="text-white/80">+1 234 567 8900</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 p-4 bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700">
-                  <div className="bg-purple-500/20 p-3 rounded-full">
-                    <MapPin className="text-purple-400" size={20} />
+                <div className="flex items-center gap-4 p-4 glass-effect rounded-xl border border-white/20 hover-glow">
+                  <div className="bg-gradient-to-r from-purple-400 to-pink-500 p-3 rounded-full shadow-lg">
+                    <MapPin className="text-white" size={20} />
                   </div>
                   <div>
-                    <p className="font-semibold text-white">Ubicación</p>
-                    <p className="text-gray-300">Tu Ciudad, País</p>
+                    <p className="font-semibold text-white text-shadow-glow">Ubicación</p>
+                    <p className="text-white/80">Tu Ciudad, País</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div>
-              <h4 className="text-xl font-bold text-white mb-4">Redes Sociales</h4>
+            <div className="glass-effect rounded-2xl p-8 border border-white/30 shadow-2xl backdrop-blur-glass hover-glow">
+              <h4 className="text-xl font-bold text-white mb-4 gradient-text-cyber">Redes Sociales</h4>
               <div className="flex gap-4">
                 <a 
                   href="#" 
-                  className="bg-gray-800 p-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110 border border-gray-700"
+                  className="bg-gradient-to-r from-gray-600 to-gray-800 p-3 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 border border-white/30 glass-effect"
                 >
-                  <Github className="text-gray-300" size={24} />
+                  <Github className="text-white" size={24} />
                 </a>
                 <a 
                   href="#" 
-                  className="bg-gray-800 p-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110 border border-gray-700"
+                  className="bg-gradient-to-r from-blue-500 to-blue-700 p-3 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 border border-white/30 glass-effect"
                 >
-                  <Linkedin className="text-blue-400" size={24} />
+                  <Linkedin className="text-white" size={24} />
                 </a>
                 <a 
                   href="#" 
-                  className="bg-gray-800 p-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110 border border-gray-700"
+                  className="bg-gradient-to-r from-green-500 to-green-700 p-3 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 border border-white/30 glass-effect"
                 >
-                  <MessageCircle className="text-green-400" size={24} />
+                  <MessageCircle className="text-white" size={24} />
                 </a>
               </div>
             </div>
           </div>
 
           {/* Formulario de contacto */}
-          <div className="bg-gray-800/70 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-gray-700">
-            <h3 className="text-2xl font-bold text-white mb-6">Envíame un Mensaje</h3>
+          <div className="glass-effect rounded-3xl p-8 shadow-2xl border border-white/30 backdrop-blur-glass hover-glow">
+            <h3 className="text-2xl font-bold text-white mb-6 gradient-text-cyber">Envíame un Mensaje</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-gray-300 mb-2">
+                <label htmlFor="name" className="block text-sm font-semibold text-white/90 mb-2">
                   Nombre Completo
                 </label>
                 <input
@@ -119,13 +127,13 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-white placeholder-gray-400"
+                  className="w-full px-4 py-3 glass-effect border border-white/30 rounded-xl focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 text-white placeholder-white/60 backdrop-blur-md"
                   placeholder="Tu nombre completo"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-300 mb-2">
+                <label htmlFor="email" className="block text-sm font-semibold text-white/90 mb-2">
                   Email
                 </label>
                 <input
@@ -135,13 +143,13 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-white placeholder-gray-400"
+                  className="w-full px-4 py-3 glass-effect border border-white/30 rounded-xl focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 text-white placeholder-white/60 backdrop-blur-md"
                   placeholder="tu.email@ejemplo.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-semibold text-gray-300 mb-2">
+                <label htmlFor="subject" className="block text-sm font-semibold text-white/90 mb-2">
                   Asunto
                 </label>
                 <input
@@ -151,13 +159,13 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-white placeholder-gray-400"
+                  className="w-full px-4 py-3 glass-effect border border-white/30 rounded-xl focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 text-white placeholder-white/60 backdrop-blur-md"
                   placeholder="¿De qué quieres hablar?"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-300 mb-2">
+                <label htmlFor="message" className="block text-sm font-semibold text-white/90 mb-2">
                   Mensaje
                 </label>
                 <textarea
@@ -167,17 +175,17 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none text-white placeholder-gray-400"
+                  className="w-full px-4 py-3 glass-effect border border-white/30 rounded-xl focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 resize-none text-white placeholder-white/60 backdrop-blur-md"
                   placeholder="Cuéntame sobre tu proyecto o idea..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+                className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-3 px-6 rounded-xl font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 border border-white/30 text-shadow-glow"
               >
                 <Send size={20} />
-                Enviar Mensaje
+                Enviar Mensaje ✨
               </button>
             </form>
           </div>
