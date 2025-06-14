@@ -3,8 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Importar fuente Inter para un diseño moderno */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+/* Importar fuente moderna para Frutiger Aero */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 @layer base {
   :root {
@@ -55,7 +55,8 @@
   }
 
   body {
-    @apply bg-gray-900 text-gray-100 font-sans;
+    @apply bg-gradient-to-br from-cyan-500 via-blue-600 to-purple-700 text-white;
+    font-family: 'Poppins', 'Inter', system-ui, sans-serif;
     font-feature-settings: 'cv03', 'cv04', 'cv11';
   }
 
@@ -65,7 +66,7 @@
 }
 
 @layer utilities {
-  /* Utilidades personalizadas para el portafolio */
+  /* Utilidades Frutiger Aero */
   .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -73,49 +74,92 @@
     overflow: hidden;
   }
 
-  .text-shadow {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  .text-shadow-glow {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
   }
 
-  .backdrop-blur-soft {
-    backdrop-filter: blur(8px);
+  .backdrop-blur-glass {
+    backdrop-filter: blur(16px) saturate(180%);
   }
 
-  /* Gradientes personalizados */
-  .gradient-text {
-    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+  /* Gradientes Frutiger Aero */
+  .gradient-text-cyber {
+    background: linear-gradient(135deg, #00f5ff 0%, #0080ff 50%, #8000ff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Animaciones suaves para hover */
-  .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  .gradient-bg-glass {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  .hover-lift:hover {
+  /* Animaciones Frutiger Aero */
+  .hover-glow {
+    transition: all 0.3s ease;
+  }
+
+  .hover-glow:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 245, 255, 0.3);
+    filter: brightness(1.1);
+  }
+
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.8;
+    }
   }
 }
 
-/* Estilos para scroll personalizado */
+/* Scroll personalizado con estilo Frutiger Aero */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1f2937;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+  border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-  border-radius: 4px;
+  background: linear-gradient(135deg, #00f5ff 0%, #0080ff 50%, #8000ff 100%);
+  border-radius: 6px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  background: linear-gradient(135deg, #00d4ff 0%, #0066ff 50%, #6600ff 100%);
+}
+
+/* Efectos de cristal para elementos */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
 }
 
 /* Optimizaciones de rendimiento */

@@ -5,49 +5,50 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 const Blog = () => {
   const blogPosts = [
     {
-      title: "Mi Viaje en el Desarrollo Web Full Stack",
-      excerpt: "Descubre cómo comencé mi aventura en la programación y las tecnologías que han marcado mi crecimiento profesional.",
+      title: "My Journey in Full Stack Web Development",
+      excerpt: "Discover how I started my adventure in programming and the technologies that have marked my professional growth.",
       date: "2024-01-15",
       readTime: "5 min",
-      category: "Experiencia Personal",
-      gradient: "from-amber-600 to-orange-600"
+      category: "Personal Experience",
+      gradient: "from-cyan-400 to-blue-500"
     },
     {
-      title: "React vs JavaScript Vanilla: ¿Cuándo usar cada uno?",
-      excerpt: "Una comparación práctica entre React y JavaScript vanilla, con ejemplos reales de cuándo elegir cada tecnología.",
+      title: "React vs Vanilla JavaScript: When to use each?",
+      excerpt: "A practical comparison between React and vanilla JavaScript, with real examples of when to choose each technology.",
       date: "2024-01-10",
       readTime: "8 min",
-      category: "Desarrollo Frontend",
-      gradient: "from-emerald-600 to-teal-600"
+      category: "Frontend Development",
+      gradient: "from-green-400 to-emerald-500"
     },
     {
-      title: "Optimización SEO para Desarrolladores",
-      excerpt: "Técnicas esenciales de SEO que todo desarrollador web debe conocer para crear sitios web que rankeen bien.",
+      title: "SEO Optimization for Developers",
+      excerpt: "Essential SEO techniques that every web developer should know to create websites that rank well.",
       date: "2024-01-05",
       readTime: "6 min",
       category: "SEO",
-      gradient: "from-rose-600 to-red-600"
+      gradient: "from-pink-400 to-purple-500"
     }
   ];
 
   return (
-    <section id="blog" className="py-20 bg-gradient-to-b from-orange-100 to-amber-50">
-      <div className="container mx-auto px-6">
+    <section id="blog" className="py-20 bg-gradient-to-b from-cyan-400 via-blue-500 to-purple-600 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-r from-yellow-300/20 to-pink-300/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-72 h-72 bg-gradient-to-r from-green-300/20 to-cyan-300/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">
-            <span className="bg-gradient-to-r from-amber-800 to-orange-800 bg-clip-text text-transparent">
-              Blog
-            </span>
-          </h2>
-          <p className="text-xl text-amber-800 max-w-2xl mx-auto font-serif">
-            Comparto mis experiencias, aprendizajes y consejos sobre desarrollo web
-          </p>
-          
-          {/* Decorative vintage border */}
-          <div className="flex justify-center mt-8">
-            <div className="w-32 h-px bg-gradient-to-r from-transparent via-amber-600 to-transparent"></div>
-            <div className="mx-4 w-2 h-2 bg-amber-600 rounded-full"></div>
-            <div className="w-32 h-px bg-gradient-to-r from-transparent via-amber-600 to-transparent"></div>
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 mb-8 border border-white/20 shadow-2xl max-w-4xl mx-auto">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-transparent">
+                Blog
+              </span>
+            </h2>
+            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+              I share my experiences, learnings and advice about web development
+            </p>
           </div>
         </div>
 
@@ -55,39 +56,30 @@ const Blog = () => {
           {blogPosts.map((post, index) => (
             <article 
               key={index}
-              className="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer relative"
-              style={{
-                boxShadow: '0 8px 32px rgba(217, 119, 6, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.6)'
-              }}
+              className="bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] transition-all duration-500 overflow-hidden group cursor-pointer border border-white/20 hover:scale-105"
             >
-              {/* Vintage corner decorations */}
-              <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-amber-400"></div>
-              <div className="absolute top-0 right-0 w-4 h-4 border-r-2 border-t-2 border-amber-400"></div>
-              <div className="absolute bottom-0 left-0 w-4 h-4 border-l-2 border-b-2 border-amber-400"></div>
-              <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-amber-400"></div>
-
               <div className={`h-32 bg-gradient-to-r ${post.gradient} relative`}>
-                <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+                <div className="absolute inset-0 bg-white/20"></div>
                 <div className="absolute top-4 left-4">
-                  <span className="bg-amber-50/90 text-amber-800 px-3 py-1 rounded-full text-sm font-semibold font-serif border border-amber-300">
+                  <span className="bg-white/90 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-full text-sm font-semibold border border-white/50 shadow-lg">
                     {post.category}
                   </span>
                 </div>
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold text-amber-900 mb-3 group-hover:text-orange-700 transition-colors duration-300 font-serif">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors duration-300">
                   {post.title}
                 </h3>
 
-                <p className="text-amber-800 mb-4 line-clamp-3 font-serif leading-relaxed">
+                <p className="text-white/80 mb-4 line-clamp-3 leading-relaxed">
                   {post.excerpt}
                 </p>
 
-                <div className="flex items-center justify-between text-sm text-amber-700 mb-4 font-serif">
+                <div className="flex items-center justify-between text-sm text-white/70 mb-4">
                   <div className="flex items-center gap-2">
                     <Calendar size={16} />
-                    <span>{new Date(post.date).toLocaleDateString('es-ES', { 
+                    <span>{new Date(post.date).toLocaleDateString('en-US', { 
                       year: 'numeric', 
                       month: 'long', 
                       day: 'numeric' 
@@ -99,8 +91,8 @@ const Blog = () => {
                   </div>
                 </div>
 
-                <button className="flex items-center gap-2 text-amber-700 font-semibold hover:gap-3 transition-all duration-300 font-serif hover:text-orange-600">
-                  Leer más
+                <button className="flex items-center gap-2 text-cyan-300 font-semibold hover:gap-3 transition-all duration-300 hover:text-white">
+                  Read more
                   <ArrowRight size={16} />
                 </button>
               </div>
@@ -109,16 +101,9 @@ const Blog = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-gradient-to-r from-amber-600 to-orange-600 text-white px-8 py-3 rounded-lg font-serif font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 border border-amber-500">
-            Ver todos los artículos
+          <button className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 border border-white/20 backdrop-blur-sm">
+            View all articles
           </button>
-          
-          {/* Decorative vintage border */}
-          <div className="flex justify-center mt-8">
-            <div className="w-24 h-px bg-gradient-to-r from-transparent via-amber-600 to-transparent"></div>
-            <div className="mx-3 w-1.5 h-1.5 bg-amber-600 rounded-full"></div>
-            <div className="w-24 h-px bg-gradient-to-r from-transparent via-amber-600 to-transparent"></div>
-          </div>
         </div>
       </div>
     </section>

@@ -7,135 +7,124 @@ const Portfolio = () => {
   const projects = [
     {
       title: "Dice Challenge",
-      description: "Juego interactivo de dados con interfaz moderna y animaciones fluidas. Desarrollado con JavaScript vanilla y CSS3.",
-      icon: <Dice1 className="text-amber-400" size={24} />,
+      description: "Interactive dice game with modern interface and smooth animations. Built with vanilla JavaScript and CSS3.",
+      icon: <Dice1 className="text-white" size={28} />,
       tech: ["React", "TypeScript", "Tailwind CSS"],
-      status: "Completado",
-      gradient: "from-amber-600 to-orange-600",
+      status: "Completed",
+      gradient: "from-cyan-400 to-blue-500",
       demoUrl: "/dice-challenge",
       isActive: true
     },
     {
       title: "Drum Kit",
-      description: "Kit de batería virtual con sonidos auténticos y respuesta táctil. Interfaz intuitiva para crear ritmos.",
-      icon: <Music className="text-rose-400" size={24} />,
+      description: "Virtual drum kit with authentic sounds and tactile response. Intuitive interface for creating rhythms.",
+      icon: <Music className="text-white" size={28} />,
       tech: ["React", "TypeScript", "Web Audio API", "Tailwind CSS"],
-      status: "Completado",
-      gradient: "from-rose-600 to-red-600",
+      status: "Completed",
+      gradient: "from-pink-400 to-purple-500",
       demoUrl: "/drum-kit",
       isActive: true
     },
     {
       title: "Keeper App",
-      description: "Aplicación de gestión de notas con funcionalidades completas de CRUD. Inspirada en Google Keep.",
-      icon: <StickyNote className="text-yellow-500" size={24} />,
+      description: "Note management application with full CRUD functionality. Inspired by Google Keep.",
+      icon: <StickyNote className="text-white" size={28} />,
       tech: ["React", "TypeScript", "Local Storage", "Tailwind CSS"],
-      status: "Completado",
-      gradient: "from-yellow-600 to-amber-600",
+      status: "Completed",
+      gradient: "from-yellow-400 to-orange-500",
       demoUrl: "/keeper-app",
       isActive: true
     },
     {
       title: "To-Do List",
-      description: "Lista de tareas avanzada con categorías, fechas límite y funcionalidades completas.",
-      icon: <CheckSquare className="text-emerald-400" size={24} />,
+      description: "Advanced task list with categories, deadlines and complete functionality.",
+      icon: <CheckSquare className="text-white" size={28} />,
       tech: ["React", "TypeScript", "Local Storage", "Tailwind CSS"],
-      status: "Completado",
-      gradient: "from-emerald-600 to-teal-600",
+      status: "Completed",
+      gradient: "from-green-400 to-emerald-500",
       demoUrl: "/todo-list",
       isActive: true
     }
   ];
 
   return (
-    <section id="portafolio" className="py-20 bg-gradient-to-b from-amber-50 to-orange-100">
-      <div className="container mx-auto px-6">
+    <section id="portafolio" className="py-20 bg-gradient-to-b from-purple-600 via-blue-500 to-cyan-400 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-10 right-10 w-72 h-72 bg-gradient-to-r from-pink-300/20 to-purple-300/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-10 left-10 w-80 h-80 bg-gradient-to-r from-cyan-300/20 to-blue-300/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif">
-            <span className="bg-gradient-to-r from-amber-800 to-orange-800 bg-clip-text text-transparent">
-              Mi Portafolio
-            </span>
-          </h2>
-          <p className="text-xl text-amber-900 max-w-2xl mx-auto font-serif">
-            Una colección de proyectos que demuestran mis habilidades en desarrollo web full stack
-          </p>
-          
-          {/* Decorative vintage border */}
-          <div className="flex justify-center mt-8">
-            <div className="w-32 h-px bg-gradient-to-r from-transparent via-amber-600 to-transparent"></div>
-            <div className="mx-4 w-2 h-2 bg-amber-600 rounded-full"></div>
-            <div className="w-32 h-px bg-gradient-to-r from-transparent via-amber-600 to-transparent"></div>
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 mb-8 border border-white/20 shadow-2xl max-w-4xl mx-auto">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-white via-cyan-200 to-blue-200 bg-clip-text text-transparent">
+                My Portfolio
+              </span>
+            </h2>
+            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+              A collection of projects showcasing my full stack web development skills
+            </p>
           </div>
         </div>
 
-        {/* Distribución en 2x2 para pantallas grandes, responsive para móviles */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {projects.map((project, index) => (
             <div 
               key={index}
-              className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border-2 border-amber-200 relative"
-              style={{
-                boxShadow: '0 8px 32px rgba(217, 119, 6, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.6)'
-              }}
+              className="bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] transition-all duration-500 overflow-hidden group border border-white/20 hover:scale-105"
             >
-              {/* Vintage corner decorations */}
-              <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-amber-400"></div>
-              <div className="absolute top-0 right-0 w-4 h-4 border-r-2 border-t-2 border-amber-400"></div>
-              <div className="absolute bottom-0 left-0 w-4 h-4 border-l-2 border-b-2 border-amber-400"></div>
-              <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-amber-400"></div>
-              
-              <div className={`h-3 bg-gradient-to-r ${project.gradient} relative`}>
-                <div className="absolute inset-0 bg-black bg-opacity-10"></div>
+              <div className={`h-4 bg-gradient-to-r ${project.gradient} relative`}>
+                <div className="absolute inset-0 bg-white/20"></div>
               </div>
               
-              <div className="p-6">
-                <div className="flex items-center mb-4">
-                  <div className="bg-gradient-to-br from-amber-100 to-orange-100 p-3 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300 border border-amber-300 shadow-inner">
+              <div className="p-8">
+                <div className="flex items-center mb-6">
+                  <div className={`bg-gradient-to-br ${project.gradient} p-4 rounded-2xl mr-4 group-hover:scale-110 transition-transform duration-300 shadow-xl`}>
                     {project.icon}
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-amber-900 font-serif">{project.title}</h3>
-                    <span className={`text-sm font-semibold font-serif ${
-                      project.isActive ? 'text-emerald-700' : 'text-orange-700'
-                    }`}>
-                      {project.status}
+                    <h3 className="text-2xl font-bold text-white">{project.title}</h3>
+                    <span className="text-green-300 font-semibold">
+                      ✅ {project.status}
                     </span>
                   </div>
                 </div>
 
-                <p className="text-amber-800 mb-4 line-clamp-3 font-serif leading-relaxed">
+                <p className="text-white/80 mb-6 leading-relaxed text-lg">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-3 mb-8">
                   {project.tech.map((tech, techIndex) => (
                     <span 
                       key={techIndex}
-                      className="px-3 py-1 bg-amber-200/60 text-amber-800 text-sm rounded-full border border-amber-300 font-serif font-medium shadow-sm"
+                      className="px-4 py-2 bg-white/20 backdrop-blur-sm text-white text-sm rounded-full border border-white/30 font-medium shadow-lg"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex gap-3">
+                <div className="flex gap-4">
                   {project.isActive ? (
                     <Link 
                       to={project.demoUrl}
-                      className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white rounded-lg transition-all duration-300 font-serif font-semibold shadow-md hover:shadow-lg transform hover:scale-105"
+                      className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${project.gradient} hover:shadow-2xl text-white rounded-xl transition-all duration-300 font-semibold transform hover:scale-105`}
                     >
-                      <ExternalLink size={16} />
+                      <ExternalLink size={18} />
                       Demo
                     </Link>
                   ) : (
-                    <button className="flex items-center gap-2 px-4 py-2 bg-amber-200 text-amber-600 rounded-lg transition-colors duration-300 cursor-not-allowed border border-amber-300 font-serif">
-                      <ExternalLink size={16} />
+                    <button className="flex items-center gap-2 px-6 py-3 bg-gray-500/50 text-gray-300 rounded-xl transition-colors duration-300 cursor-not-allowed border border-white/20">
+                      <ExternalLink size={18} />
                       Demo
                     </button>
                   )}
-                  <button className="flex items-center gap-2 px-4 py-2 bg-amber-200 text-amber-600 rounded-lg transition-colors duration-300 cursor-not-allowed border border-amber-300 font-serif">
-                    <Github size={16} />
-                    Código
+                  <button className="flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm text-white rounded-xl transition-colors duration-300 cursor-not-allowed border border-white/30">
+                    <Github size={18} />
+                    Code
                   </button>
                 </div>
               </div>
@@ -143,19 +132,14 @@ const Portfolio = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-amber-800 mb-4 font-serif text-lg">
-            ✨ Todos los proyectos están completados y funcionales ✨
-          </p>
-          <p className="text-sm text-amber-700 font-serif italic">
-            Cada proyecto demuestra diferentes aspectos del desarrollo web moderno
-          </p>
-          
-          {/* Decorative vintage border */}
-          <div className="flex justify-center mt-6">
-            <div className="w-24 h-px bg-gradient-to-r from-transparent via-amber-600 to-transparent"></div>
-            <div className="mx-3 w-1.5 h-1.5 bg-amber-600 rounded-full"></div>
-            <div className="w-24 h-px bg-gradient-to-r from-transparent via-amber-600 to-transparent"></div>
+        <div className="text-center mt-16">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 max-w-2xl mx-auto border border-white/20 shadow-2xl">
+            <p className="text-white text-xl mb-2">
+              ✨ All projects are completed and functional ✨
+            </p>
+            <p className="text-white/80">
+              Each project demonstrates different aspects of modern web development
+            </p>
           </div>
         </div>
       </div>
