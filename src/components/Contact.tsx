@@ -1,50 +1,46 @@
 import React, { useState } from 'react';
 import { Send, Github, Linkedin } from 'lucide-react';
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     subject: '',
     message: ''
   });
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
+    const {
+      name,
+      value
+    } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Crear el enlace de Gmail con los datos del formulario
     const subject = encodeURIComponent(formData.subject || 'Contacto desde el portafolio');
-    const body = encodeURIComponent(
-      `Hola Alejandro,
+    const body = encodeURIComponent(`Hola Alejandro,
 
 Mensaje:
 ${formData.message}
 
 ---
-Enviado desde tu portafolio web`
-    );
-    
+Enviado desde tu portafolio web`);
+
     // Usar Gmail web en lugar de mailto
     const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=alejandrolaram.9@gmail.com&su=${subject}&body=${body}`;
-    
+
     // Abrir Gmail en una nueva pestaña
     window.open(gmailLink, '_blank');
-    
+
     // Limpiar el formulario después de enviarlo
     setFormData({
       subject: '',
       message: ''
     });
   };
-
-  return (
-    <section id="contacto" className="py-20 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 relative overflow-hidden">
+  return <section id="contacto" className="py-20 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-10 left-10 w-64 h-64 bg-gradient-to-r from-pink-300/30 to-cyan-300/30 rounded-full blur-3xl animate-pulse"></div>
@@ -83,45 +79,24 @@ Enviado desde tu portafolio web`
 
           {/* Formulario de contacto */}
           <div className="glass-effect rounded-3xl p-8 shadow-2xl border border-white/30 backdrop-blur-glass hover-glow">
-            <h3 className="text-2xl font-bold text-white mb-6 text-shadow-glow">Envíame un Mensaje</h3>
+            <h3 className="text-2xl font-bold text-white mb-6 text-shadow-glow">Envíame un Email</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="subject" className="block text-sm font-semibold text-white/90 mb-2">
                   Asunto
                 </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleInputChange}
-                  required
-                  className="w-full px-4 py-3 bg-white/90 border border-white/30 rounded-xl focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 text-gray-800 placeholder-gray-500 backdrop-blur-md"
-                  placeholder="¿De qué quieres hablar?"
-                />
+                <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleInputChange} required className="w-full px-4 py-3 bg-white/90 border border-white/30 rounded-xl focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 text-gray-800 placeholder-gray-500 backdrop-blur-md" placeholder="¿De qué quieres hablar?" />
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-semibold text-white/90 mb-2">
                   Mensaje
                 </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  required
-                  rows={5}
-                  className="w-full px-4 py-3 bg-white/90 border border-white/30 rounded-xl focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 resize-none text-gray-800 placeholder-gray-500 backdrop-blur-md"
-                  placeholder="Cuéntame sobre tu proyecto o idea..."
-                />
+                <textarea id="message" name="message" value={formData.message} onChange={handleInputChange} required rows={5} className="w-full px-4 py-3 bg-white/90 border border-white/30 rounded-xl focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 resize-none text-gray-800 placeholder-gray-500 backdrop-blur-md" placeholder="Cuéntame sobre tu proyecto o idea..." />
               </div>
 
-              <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-3 px-6 rounded-xl font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 border border-white/30 text-shadow-glow"
-              >
+              <button type="submit" className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-3 px-6 rounded-xl font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 border border-white/30 text-shadow-glow">
                 <Send size={20} />
                 Enviar Mensaje ✨
               </button>
@@ -129,8 +104,6 @@ Enviado desde tu portafolio web`
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
