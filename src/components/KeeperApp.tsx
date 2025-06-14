@@ -116,13 +116,13 @@ const KeeperApp = () => {
           {/* Search and Add Button */}
           <div className="flex flex-col md:flex-row gap-4 mb-8">
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/70" size={20} />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600" size={20} />
               <input
                 type="text"
                 placeholder="Buscar notas..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 glass-effect border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-white placeholder-white/60 backdrop-blur-md"
+                className="w-full pl-10 pr-4 py-3 bg-white/90 border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 text-gray-800 placeholder-gray-500 backdrop-blur-md shadow-lg"
               />
             </div>
             <button
@@ -152,7 +152,7 @@ const KeeperApp = () => {
                 placeholder="Título de la nota..."
                 value={newNote.title}
                 onChange={(e) => setNewNote({ ...newNote, title: e.target.value })}
-                className="w-full mb-4 p-3 glass-effect border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white placeholder-white/60 backdrop-blur-md"
+                className="w-full mb-4 p-3 bg-white/90 border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-gray-800 placeholder-gray-500 backdrop-blur-md shadow-lg"
               />
               
               <textarea
@@ -160,7 +160,7 @@ const KeeperApp = () => {
                 value={newNote.content}
                 onChange={(e) => setNewNote({ ...newNote, content: e.target.value })}
                 rows={4}
-                className="w-full mb-4 p-3 glass-effect border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 resize-none text-white placeholder-white/60 backdrop-blur-md"
+                className="w-full mb-4 p-3 bg-white/90 border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 resize-none text-gray-800 placeholder-gray-500 backdrop-blur-md shadow-lg"
               />
               
               <div className="flex items-center gap-4 mb-4">
@@ -253,14 +253,14 @@ const KeeperApp = () => {
                   type="text"
                   value={editingNote.title}
                   onChange={(e) => setEditingNote({ ...editingNote, title: e.target.value })}
-                  className="w-full mb-4 p-3 glass-effect border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white placeholder-white/60 backdrop-blur-md"
+                  className="w-full mb-4 p-3 bg-white/90 border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-gray-800 placeholder-gray-500 backdrop-blur-md shadow-lg"
                 />
                 
                 <textarea
                   value={editingNote.content}
                   onChange={(e) => setEditingNote({ ...editingNote, content: e.target.value })}
                   rows={4}
-                  className="w-full mb-4 p-3 glass-effect border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 resize-none text-white placeholder-white/60 backdrop-blur-md"
+                  className="w-full mb-4 p-3 bg-white/90 border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 resize-none text-gray-800 placeholder-gray-500 backdrop-blur-md shadow-lg"
                 />
                 
                 <div className="flex items-center gap-4 mb-4">

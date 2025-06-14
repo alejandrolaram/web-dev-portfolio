@@ -171,7 +171,7 @@ const TodoList = () => {
                 <select
                   value={filter}
                   onChange={(e) => setFilter(e.target.value as any)}
-                  className="px-4 py-2 glass-effect border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white backdrop-blur-md"
+                  className="px-4 py-2 bg-white/90 border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-gray-800 backdrop-blur-md shadow-lg"
                 >
                   <option value="all">Todas</option>
                   <option value="pending">Pendientes</option>
@@ -181,7 +181,7 @@ const TodoList = () => {
                 <select
                   value={categoryFilter}
                   onChange={(e) => setCategoryFilter(e.target.value)}
-                  className="px-4 py-2 glass-effect border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white backdrop-blur-md"
+                  className="px-4 py-2 bg-white/90 border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-gray-800 backdrop-blur-md shadow-lg"
                 >
                   <option value="all">Todas las categorías</option>
                   {categories.map(cat => (
@@ -211,13 +211,13 @@ const TodoList = () => {
                   placeholder="Título de la tarea..."
                   value={newTodo.title}
                   onChange={(e) => setNewTodo({ ...newTodo, title: e.target.value })}
-                  className="p-3 glass-effect border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white placeholder-white/60 backdrop-blur-md"
+                  className="p-3 bg-white/90 border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-gray-800 placeholder-gray-500 backdrop-blur-md shadow-lg"
                 />
                 
                 <select
                   value={newTodo.category}
                   onChange={(e) => setNewTodo({ ...newTodo, category: e.target.value })}
-                  className="p-3 glass-effect border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white backdrop-blur-md"
+                  className="p-3 bg-white/90 border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-gray-800 backdrop-blur-md shadow-lg"
                 >
                   {categories.map(cat => (
                     <option key={cat} value={cat}>{cat.charAt(0).toUpperCase() + cat.slice(1)}</option>
@@ -230,14 +230,14 @@ const TodoList = () => {
                 value={newTodo.description}
                 onChange={(e) => setNewTodo({ ...newTodo, description: e.target.value })}
                 rows={3}
-                className="w-full mb-4 p-3 glass-effect border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 resize-none text-white placeholder-white/60 backdrop-blur-md"
+                className="w-full mb-4 p-3 bg-white/90 border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 resize-none text-gray-800 placeholder-gray-500 backdrop-blur-md shadow-lg"
               />
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <select
                   value={newTodo.priority}
                   onChange={(e) => setNewTodo({ ...newTodo, priority: e.target.value as any })}
-                  className="p-3 glass-effect border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white backdrop-blur-md"
+                  className="p-3 bg-white/90 border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-gray-800 backdrop-blur-md shadow-lg"
                 >
                   {priorities.map(priority => (
                     <option key={priority.value} value={priority.value}>
@@ -250,7 +250,7 @@ const TodoList = () => {
                   type="date"
                   value={newTodo.dueDate}
                   onChange={(e) => setNewTodo({ ...newTodo, dueDate: e.target.value })}
-                  className="p-3 glass-effect border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-white backdrop-blur-md"
+                  className="p-3 bg-white/90 border border-white/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-gray-800 backdrop-blur-md shadow-lg"
                 />
               </div>
               
