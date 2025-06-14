@@ -11,9 +11,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent mb-4">
-              Mi Portafolio ✨
-            </h3>
+            <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent mb-4">Sobre mí</h3>
             
             <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 mb-4 border border-white/20 shadow-xl">
               <p className="text-white/90 mb-4 leading-relaxed">
