@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Mail, Send, Github, Linkedin } from 'lucide-react';
 
@@ -56,15 +57,15 @@ const Contact = () => {
             <div className="glass-effect rounded-2xl p-8 border border-white/30 shadow-2xl backdrop-blur-glass hover-glow">
               <h3 className="text-2xl font-bold text-white mb-6 text-shadow-glow">Información de Contacto</h3>
               <div className="space-y-6">
-                <div className="flex items-center gap-4 p-4 glass-effect rounded-xl border border-white/20 hover-glow">
+                <a href="mailto:tu.email@ejemplo.com" className="flex items-center gap-4 p-4 glass-effect rounded-xl border border-white/20 hover-glow cursor-pointer transition-all duration-300 hover:scale-105">
                   <div className="bg-gradient-to-r from-cyan-400 to-blue-500 p-3 rounded-full shadow-lg">
                     <Mail className="text-white" size={20} />
                   </div>
                   <div>
                     <p className="font-semibold text-white text-shadow-glow">Email</p>
-                    <p className="text-white/80">tu.email@ejemplo.com</p>
+                    <p className="text-white/80">Envíame un correo</p>
                   </div>
-                </div>
+                </a>
                 
                 <div className="flex gap-4 justify-center">
                   <a href="#" className="bg-gradient-to-r from-gray-600 to-gray-800 p-4 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 border border-white/30 glass-effect">
