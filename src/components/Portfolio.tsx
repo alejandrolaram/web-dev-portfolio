@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ExternalLink, Github, Dice1, Music, StickyNote, CheckSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -11,7 +12,7 @@ const Portfolio = () => {
       tech: ["React", "TypeScript", "Tailwind CSS"],
       gradient: "from-cyan-400 to-blue-500",
       demoUrl: "/dice-challenge",
-      githubUrl: "https://github.com/tu-usuario/web-dev-portfolio",
+      githubUrl: "https://github.com/alejandrolaram/web-dev-portfolio/tree/main/src/components/DiceChallenge.tsx",
       isActive: true
     },
     {
@@ -21,7 +22,7 @@ const Portfolio = () => {
       tech: ["React", "TypeScript", "Web Audio API", "Tailwind CSS"],
       gradient: "from-pink-400 to-purple-500",
       demoUrl: "/drum-kit",
-      githubUrl: "https://github.com/tu-usuario/web-dev-portfolio",
+      githubUrl: "https://github.com/alejandrolaram/web-dev-portfolio/tree/main/src/components/DrumKit.tsx",
       isActive: true
     },
     {
@@ -31,7 +32,7 @@ const Portfolio = () => {
       tech: ["React", "TypeScript", "Local Storage", "Tailwind CSS"],
       gradient: "from-yellow-400 to-orange-500",
       demoUrl: "/keeper-app",
-      githubUrl: "https://github.com/tu-usuario/web-dev-portfolio",
+      githubUrl: "https://github.com/alejandrolaram/web-dev-portfolio/tree/main/src/components/KeeperApp.tsx",
       isActive: true
     },
     {
@@ -41,7 +42,7 @@ const Portfolio = () => {
       tech: ["React", "TypeScript", "Local Storage", "Tailwind CSS"],
       gradient: "from-green-400 to-emerald-500",
       demoUrl: "/todo-list",
-      githubUrl: "https://github.com/tu-usuario/web-dev-portfolio",
+      githubUrl: "https://github.com/alejandrolaram/web-dev-portfolio/tree/main/src/components/TodoList.tsx",
       isActive: true
     }
   ];
