@@ -157,31 +157,43 @@ const DrumKit = () => {
         break;
 
       case 'crash':
-        // Crash cymbal - explosivo y resonante
-        const crashNoise = audioContext.createBufferSource();
-        const crashOsc = audioContext.createOscillator();
+        // Crash cymbal mejorado - más armonioso y menos ruidoso
+        const crashOsc1 = audioContext.createOscillator();
+        const crashOsc2 = audioContext.createOscillator();
+        const crashOsc3 = audioContext.createOscillator();
         const crashGain = audioContext.createGain();
+        const crashFilter = audioContext.createBiquadFilter();
         
-        const crashBuffer = audioContext.createBuffer(1, audioContext.sampleRate * 1.5, audioContext.sampleRate);
-        const crashData = crashBuffer.getChannelData(0);
-        for (let i = 0; i < crashData.length; i++) {
-          crashData[i] = (Math.random() - 0.5) * 2;
-        }
+        // Múltiples osciladores para crear un sonido más rico pero controlado
+        crashOsc1.frequency.setValueAtTime(3000, audioContext.currentTime);
+        crashOsc2.frequency.setValueAtTime(4500, audioContext.currentTime);
+        crashOsc3.frequency.setValueAtTime(6000, audioContext.currentTime);
         
-        crashNoise.buffer = crashBuffer;
-        crashOsc.frequency.setValueAtTime(4000, audioContext.currentTime);
-        crashOsc.type = 'sawtooth';
+        crashOsc1.type = 'triangle';
+        crashOsc2.type = 'sawtooth';
+        crashOsc3.type = 'sine';
         
-        crashGain.gain.setValueAtTime(0.4, audioContext.currentTime);
-        crashGain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 1.5);
+        // Filtro para suavizar las frecuencias altas
+        crashFilter.type = 'lowpass';
+        crashFilter.frequency.setValueAtTime(8000, audioContext.currentTime);
+        crashFilter.Q.setValueAtTime(1, audioContext.currentTime);
         
-        crashNoise.connect(crashGain);
-        crashOsc.connect(crashGain);
+        // Volumen más controlado
+        crashGain.gain.setValueAtTime(0.25, audioContext.currentTime);
+        crashGain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 1.2);
+        
+        crashOsc1.connect(crashFilter);
+        crashOsc2.connect(crashFilter);
+        crashOsc3.connect(crashFilter);
+        crashFilter.connect(crashGain);
         crashGain.connect(audioContext.destination);
         
-        crashNoise.start(audioContext.currentTime);
-        crashOsc.start(audioContext.currentTime);
-        crashOsc.stop(audioContext.currentTime + 1.5);
+        crashOsc1.start(audioContext.currentTime);
+        crashOsc2.start(audioContext.currentTime);
+        crashOsc3.start(audioContext.currentTime);
+        crashOsc1.stop(audioContext.currentTime + 1.2);
+        crashOsc2.stop(audioContext.currentTime + 1.2);
+        crashOsc3.stop(audioContext.currentTime + 1.2);
         break;
 
       case 'tom1':
