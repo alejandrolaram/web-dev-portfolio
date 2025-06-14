@@ -61,7 +61,8 @@ const Portfolio = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Distribución en 2x2 para pantallas grandes, responsive para móviles */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {projects.map((project, index) => (
             <div 
               key={index}
