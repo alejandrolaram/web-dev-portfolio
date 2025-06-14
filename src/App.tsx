@@ -16,12 +16,20 @@ import TodoList from "./components/TodoList";
 
 const queryClient = new QueryClient();
 
+// Detectar si estamos en GitHub Pages
+const isGitHubPages = window.location.hostname.includes('github.io');
+const basename = isGitHubPages ? "/web-dev-portfolio" : "";
+
+console.log('Current hostname:', window.location.hostname);
+console.log('Is GitHub Pages:', isGitHubPages);
+console.log('Using basename:', basename);
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/web-dev-portfolio">
+      <BrowserRouter basename={basename}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/blog/mi-viaje-desarrollo-web" element={<BlogPost1 />} />
