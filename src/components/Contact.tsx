@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Send, Github, Linkedin } from 'lucide-react';
+import { Send, Github, Linkedin } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -67,12 +67,6 @@ Enviado desde tu portafolio web`
         <div className="max-w-2xl mx-auto">
           {/* Botones de contacto */}
           <div className="flex gap-8 justify-center mb-8">
-            <div className="text-center">
-              <p className="text-white font-medium mb-3 text-sm">Correo</p>
-              <a href="mailto:alejandrolaram.9@gmail.com" className="bg-gradient-to-r from-cyan-500 to-blue-600 p-4 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 border border-white/30 glass-effect block">
-                <Mail className="text-white" size={24} />
-              </a>
-            </div>
             <div className="text-center">
               <p className="text-white font-medium mb-3 text-sm">GitHub</p>
               <a href="#" className="bg-gradient-to-r from-gray-600 to-gray-800 p-4 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 border border-white/30 glass-effect block">
