@@ -1,0 +1,125 @@
+
+import React from 'react';
+import { ExternalLink, Github, Dice1, Music, StickyNote, CheckSquare, Edit3 } from 'lucide-react';
+
+const Portfolio = () => {
+  const projects = [
+    {
+      title: "Dice Challenge",
+      description: "Juego interactivo de dados con interfaz moderna y animaciones fluidas. Desarrollado con JavaScript vanilla y CSS3.",
+      icon: <Dice1 className="text-blue-600" size={24} />,
+      tech: ["HTML5", "CSS3", "JavaScript"],
+      status: "Próximamente",
+      gradient: "from-blue-500 to-cyan-500"
+    },
+    {
+      title: "Drum Kit",
+      description: "Kit de batería virtual con sonidos auténticos y respuesta táctil. Interfaz intuitiva para crear ritmos.",
+      icon: <Music className="text-purple-600" size={24} />,
+      tech: ["HTML5", "CSS3", "JavaScript", "Web Audio API"],
+      status: "Próximamente",
+      gradient: "from-purple-500 to-pink-500"
+    },
+    {
+      title: "Keeper App",
+      description: "Aplicación de gestión de notas con funcionalidades completas de CRUD. Inspirada en Google Keep.",
+      icon: <StickyNote className="text-yellow-600" size={24} />,
+      tech: ["React", "Node.js", "Express", "MongoDB"],
+      status: "Próximamente",
+      gradient: "from-yellow-500 to-orange-500"
+    },
+    {
+      title: "To-Do List",
+      description: "Lista de tareas avanzada con categorías, fechas límite y sincronización en tiempo real.",
+      icon: <CheckSquare className="text-green-600" size={24} />,
+      tech: ["React", "Node.js", "Express", "PostgreSQL"],
+      status: "Próximamente",
+      gradient: "from-green-500 to-teal-500"
+    },
+    {
+      title: "Blog Web App",
+      description: "Plataforma de blog completa con sistema de comentarios, categorías y panel de administración.",
+      icon: <Edit3 className="text-red-600" size={24} />,
+      tech: ["React", "Node.js", "Express", "PostgreSQL"],
+      status: "Próximamente",
+      gradient: "from-red-500 to-pink-500"
+    }
+  ];
+
+  return (
+    <section id="portafolio" className="py-20 bg-gray-50">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Mi Portafolio
+            </span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Una colección de proyectos que demuestran mis habilidades en desarrollo web full stack
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <div 
+              key={index}
+              className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+            >
+              <div className={`h-2 bg-gradient-to-r ${project.gradient}`} />
+              
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="bg-gray-100 p-3 rounded-full mr-4 group-hover:scale-110 transition-transform duration-300">
+                    {project.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-800">{project.title}</h3>
+                    <span className="text-sm text-orange-500 font-semibold">{project.status}</span>
+                  </div>
+                </div>
+
+                <p className="text-gray-600 mb-4 line-clamp-3">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tech.map((tech, techIndex) => (
+                    <span 
+                      key={techIndex}
+                      className="px-3 py-1 bg-blue-100 text-blue-600 text-sm rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex gap-3">
+                  <button className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-500 rounded-lg transition-colors duration-300 cursor-not-allowed">
+                    <ExternalLink size={16} />
+                    Demo
+                  </button>
+                  <button className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-500 rounded-lg transition-colors duration-300 cursor-not-allowed">
+                    <Github size={16} />
+                    Código
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <p className="text-gray-600 mb-4">
+            🚧 Estos proyectos están en desarrollo activo
+          </p>
+          <p className="text-sm text-gray-500">
+            Siguiendo la estructura de trabajo definida, cada proyecto será implementado con las mejores prácticas
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Portfolio;
