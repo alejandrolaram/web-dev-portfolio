@@ -10,7 +10,6 @@ import DiceChallenge from "./components/DiceChallenge";
 import DrumKit from "./components/DrumKit";
 import KeeperApp from "./components/KeeperApp";
 import TodoList from "./components/TodoList";
-import BlogApp from "./components/BlogApp";
 
 const queryClient = new QueryClient();
 
@@ -26,7 +25,6 @@ const App = () => (
           <Route path="/drum-kit" element={<DrumKit />} />
           <Route path="/keeper-app" element={<KeeperApp />} />
           <Route path="/todo-list" element={<TodoList />} />
-          <Route path="/blog" element={<BlogApp />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

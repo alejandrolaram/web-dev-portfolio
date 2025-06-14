@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ExternalLink, Github, Dice1, Music, StickyNote, CheckSquare, Edit3 } from 'lucide-react';
+import { ExternalLink, Github, Dice1, Music, StickyNote, CheckSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Portfolio = () => {
@@ -43,16 +43,6 @@ const Portfolio = () => {
       status: "Completado",
       gradient: "from-green-500 to-teal-500",
       demoUrl: "/todo-list",
-      isActive: true
-    },
-    {
-      title: "Blog Web App",
-      description: "Plataforma de blog completa con sistema de comentarios, categorías y gestión de contenido.",
-      icon: <Edit3 className="text-red-400" size={24} />,
-      tech: ["React", "TypeScript", "Context API", "Tailwind CSS"],
-      status: "Completado",
-      gradient: "from-red-500 to-pink-500",
-      demoUrl: "/blog",
       isActive: true
     }
   ];
