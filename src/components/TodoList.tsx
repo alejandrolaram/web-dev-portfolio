@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Home, ArrowLeft, Plus, Trash2, Check, Clock, Flag, Filter } from 'lucide-react';
+import { ArrowLeft, Plus, Trash2, Check, Clock, Flag, Filter } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface Todo {
@@ -119,28 +119,13 @@ const TodoList = () => {
 
       {/* Navigation Header */}
       <nav className="glass-effect shadow-2xl border-b border-white/30 p-4 relative z-50">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
+        <div className="max-w-6xl mx-auto flex items-center justify-center">
           <Link 
             to="/" 
             className="flex items-center gap-2 text-white hover:text-green-200 transition-colors duration-300 font-medium"
           >
             <ArrowLeft size={20} />
             <span className="font-semibold">Volver al Portafolio</span>
-          </Link>
-          
-          <Link 
-            to="/" 
-            className="text-2xl font-bold text-white text-shadow-glow"
-          >
-            Mi Portafolio ✨
-          </Link>
-          
-          <Link 
-            to="/" 
-            className="flex items-center gap-2 text-white hover:text-green-200 transition-colors duration-300 font-medium"
-          >
-            <Home size={20} />
-            <span className="font-semibold">Inicio</span>
           </Link>
         </div>
       </nav>
