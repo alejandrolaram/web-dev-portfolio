@@ -86,15 +86,7 @@ const Footer = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-full h-px w-64"></div>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="flex items-center gap-2 text-white/80 mb-4 md:mb-0">
-            <span>Hecho con</span>
-            <Heart className="text-pink-400" size={16} />
-            <span>y</span>
-            <Code className="text-cyan-400" size={16} />
-            <span>por un desarrollador apasionado</span>
-          </div>
-          
+        <div className="flex justify-center">
           <p className="text-white/70 text-sm">
             © 2024 Mi Portafolio. Todos los derechos reservados.
           </p>
