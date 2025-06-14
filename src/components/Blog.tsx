@@ -31,15 +31,15 @@ const Blog = () => {
   ];
 
   return (
-    <section id="blog" className="py-20 bg-white">
+    <section id="blog" className="py-20 bg-gray-900">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Blog
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Comparto mis experiencias, aprendizajes y consejos sobre desarrollo web
           </p>
         </div>
@@ -48,27 +48,27 @@ const Blog = () => {
           {blogPosts.map((post, index) => (
             <article 
               key={index}
-              className="bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
+              className="bg-gray-800 border border-gray-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
             >
               <div className={`h-32 bg-gradient-to-r ${post.gradient} relative`}>
-                <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+                <div className="absolute inset-0 bg-black bg-opacity-40"></div>
                 <div className="absolute top-4 left-4">
-                  <span className="bg-white text-gray-800 px-3 py-1 rounded-full text-sm font-semibold">
+                  <span className="bg-gray-900/80 text-gray-200 px-3 py-1 rounded-full text-sm font-semibold">
                     {post.category}
                   </span>
                 </div>
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
                   {post.title}
                 </h3>
 
-                <p className="text-gray-600 mb-4 line-clamp-3">
+                <p className="text-gray-300 mb-4 line-clamp-3">
                   {post.excerpt}
                 </p>
 
-                <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
                   <div className="flex items-center gap-2">
                     <Calendar size={16} />
                     <span>{new Date(post.date).toLocaleDateString('es-ES', { 
@@ -83,7 +83,7 @@ const Blog = () => {
                   </div>
                 </div>
 
-                <button className="flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all duration-300">
+                <button className="flex items-center gap-2 text-blue-400 font-semibold hover:gap-3 transition-all duration-300">
                   Leer más
                   <ArrowRight size={16} />
                 </button>

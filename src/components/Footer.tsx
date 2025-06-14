@@ -4,7 +4,7 @@ import { Heart, Code } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-gray-950 text-white py-12 border-t border-gray-800">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
@@ -20,7 +20,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
+            <h4 className="text-lg font-semibold mb-4 text-white">Enlaces Rápidos</h4>
             <div className="space-y-2">
               <button 
                 onClick={() => document.getElementById('inicio')?.scrollIntoView({ behavior: 'smooth' })}
@@ -50,7 +50,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Conecta Conmigo</h4>
+            <h4 className="text-lg font-semibold mb-4 text-white">Conecta Conmigo</h4>
             <p className="text-gray-300 mb-4">
               ¿Tienes una idea? ¡Hablemos y hagámosla realidad!
             </p>
@@ -63,7 +63,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <hr className="border-gray-700 my-8" />
+        <hr className="border-gray-800 my-8" />
 
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="flex items-center gap-2 text-gray-400 mb-4 md:mb-0">
