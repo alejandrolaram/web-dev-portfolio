@@ -130,7 +130,7 @@ const TodoList = () => {
           
           <Link 
             to="/" 
-            className="text-2xl font-bold gradient-text-cyber text-shadow-glow"
+            className="text-2xl font-bold text-white text-shadow-glow"
           >
             Mi Portafolio ✨
           </Link>
@@ -150,7 +150,7 @@ const TodoList = () => {
           {/* Header */}
           <div className="text-center mb-8">
             <div className="glass-effect rounded-3xl p-8 mb-8 border border-white/30 shadow-2xl backdrop-blur-glass">
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 gradient-text-cyber text-shadow-glow">
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 text-shadow-glow">
                 ✅ To-Do List Pro ✅
               </h1>
               <p className="text-xl text-white/90 mb-6">
@@ -162,19 +162,19 @@ const TodoList = () => {
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
             <div className="glass-effect rounded-2xl shadow-xl p-4 border border-cyan-300/30 hover-glow">
-              <div className="text-2xl font-bold text-cyan-200 text-shadow-glow">{stats.total}</div>
+              <div className="text-2xl font-bold text-white text-shadow-glow">{stats.total}</div>
               <div className="text-white/80">Total</div>
             </div>
             <div className="glass-effect rounded-2xl shadow-xl p-4 border border-yellow-300/30 hover-glow">
-              <div className="text-2xl font-bold text-yellow-200 text-shadow-glow">{stats.pending}</div>
+              <div className="text-2xl font-bold text-white text-shadow-glow">{stats.pending}</div>
               <div className="text-white/80">Pendientes</div>
             </div>
             <div className="glass-effect rounded-2xl shadow-xl p-4 border border-green-300/30 hover-glow">
-              <div className="text-2xl font-bold text-green-200 text-shadow-glow">{stats.completed}</div>
+              <div className="text-2xl font-bold text-white text-shadow-glow">{stats.completed}</div>
               <div className="text-white/80">Completadas</div>
             </div>
             <div className="glass-effect rounded-2xl shadow-xl p-4 border border-pink-300/30 hover-glow">
-              <div className="text-2xl font-bold text-pink-200 text-shadow-glow">{stats.highPriority}</div>
+              <div className="text-2xl font-bold text-white text-shadow-glow">{stats.highPriority}</div>
               <div className="text-white/80">Alta Prioridad</div>
             </div>
           </div>
@@ -218,7 +218,7 @@ const TodoList = () => {
           {/* Create Todo Form */}
           {isCreating && (
             <div className="glass-effect rounded-2xl shadow-2xl p-6 mb-8 border border-white/30 backdrop-blur-glass">
-              <h3 className="text-lg font-bold text-white mb-4 gradient-text-cyber">Crear Nueva Tarea</h3>
+              <h3 className="text-lg font-bold text-white mb-4 text-shadow-glow">Crear Nueva Tarea</h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <input
@@ -327,7 +327,7 @@ const TodoList = () => {
                           {priority?.label}
                         </span>
                         
-                        <span className="px-2 py-1 bg-gradient-to-r from-cyan-400/30 to-blue-400/30 text-cyan-200 rounded-full text-xs font-semibold border border-cyan-300/30">
+                        <span className="px-2 py-1 bg-gradient-to-r from-white/20 to-white/10 text-white rounded-full text-xs font-semibold border border-white/30">
                           {todo.category}
                         </span>
                       </div>
@@ -373,7 +373,7 @@ const TodoList = () => {
             <div className="text-center py-12">
               <div className="glass-effect rounded-3xl p-12 border border-white/30 backdrop-blur-glass">
                 <div className="text-6xl mb-4">📋</div>
-                <h3 className="text-xl font-bold text-white mb-2 gradient-text-cyber">No hay tareas que mostrar</h3>
+                <h3 className="text-xl font-bold text-white mb-2 text-shadow-glow">No hay tareas que mostrar</h3>
                 <p className="text-white/80">
                   {filter === 'all' ? 'Crea tu primera tarea para comenzar' : `No hay tareas ${filter === 'pending' ? 'pendientes' : 'completadas'}`}
                 </p>
