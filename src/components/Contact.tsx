@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Mail, Send, Github, Linkedin } from 'lucide-react';
 
@@ -21,7 +20,7 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Crear el enlace mailto con los datos del formulario
+    // Crear el enlace de Gmail con los datos del formulario
     const subject = encodeURIComponent(formData.subject || 'Contacto desde el portafolio');
     const body = encodeURIComponent(
       `Hola Alejandro,
@@ -36,10 +35,11 @@ ${formData.message}
 Enviado desde tu portafolio web`
     );
     
-    const mailtoLink = `mailto:alejandrolaram.9@gmail.com?subject=${subject}&body=${body}`;
+    // Usar Gmail web en lugar de mailto
+    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=alejandrolaram.9@gmail.com&su=${subject}&body=${body}`;
     
-    // Abrir el cliente de correo del usuario
-    window.location.href = mailtoLink;
+    // Abrir Gmail en una nueva pestaña
+    window.open(gmailLink, '_blank');
     
     // Limpiar el formulario después de enviarlo
     setFormData({
