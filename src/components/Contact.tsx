@@ -1,5 +1,4 @@
 
-
 import React, { useState } from 'react';
 import { Mail, Send, Github, Linkedin } from 'lucide-react';
 
@@ -21,8 +20,28 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Formulario enviado:', formData);
-    alert('¡Mensaje enviado! Te contactaré pronto.');
+    
+    // Crear el enlace mailto con los datos del formulario
+    const subject = encodeURIComponent(formData.subject || 'Contacto desde el portafolio');
+    const body = encodeURIComponent(
+      `Hola Alejandro,
+
+Mi nombre es: ${formData.name}
+Mi email es: ${formData.email}
+
+Mensaje:
+${formData.message}
+
+---
+Enviado desde tu portafolio web`
+    );
+    
+    const mailtoLink = `mailto:alejandrolaram.9@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Abrir el cliente de correo del usuario
+    window.location.href = mailtoLink;
+    
+    // Limpiar el formulario después de enviarlo
     setFormData({
       name: '',
       email: '',
@@ -57,7 +76,7 @@ const Contact = () => {
           <div className="flex gap-8 justify-center mb-8">
             <div className="text-center">
               <p className="text-white font-medium mb-3 text-sm">Correo</p>
-              <a href="mailto:tu.email@ejemplo.com" className="bg-gradient-to-r from-cyan-500 to-blue-600 p-4 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 border border-white/30 glass-effect block">
+              <a href="mailto:alejandrolaram.9@gmail.com" className="bg-gradient-to-r from-cyan-500 to-blue-600 p-4 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 border border-white/30 glass-effect block">
                 <Mail className="text-white" size={24} />
               </a>
             </div>
@@ -160,4 +179,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
