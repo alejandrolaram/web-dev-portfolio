@@ -20,7 +20,7 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: process.env.NODE_ENV === 'production' ? '/web-dev-portfolio/' : '/',
+  base: '/web-dev-portfolio/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
@@ -28,6 +28,9 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       output: {
         manualChunks: undefined,
+        entryFileNames: 'assets/index.js',
+        chunkFileNames: 'assets/[name].js',
+        assetFileNames: 'assets/index.css',
       },
     },
   },
