@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback } from 'react';
 import { Home, ArrowLeft, Volume2, VolumeX } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -19,41 +18,201 @@ const DrumKit = () => {
     { key: 'C', name: 'Tom 3', sound: 'tom3', color: 'from-orange-500 to-orange-700' }
   ];
 
+  const createDrumSound = (soundName: string) => {
+    const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+    
+    switch (soundName) {
+      case 'kick':
+        // Bombo - sonido grave y contundente
+        const kickOsc = audioContext.createOscillator();
+        const kickGain = audioContext.createGain();
+        const kickFilter = audioContext.createBiquadFilter();
+        
+        kickOsc.frequency.setValueAtTime(60, audioContext.currentTime);
+        kickOsc.frequency.exponentialRampToValueAtTime(20, audioContext.currentTime + 0.1);
+        kickOsc.type = 'sine';
+        
+        kickFilter.type = 'lowpass';
+        kickFilter.frequency.setValueAtTime(200, audioContext.currentTime);
+        
+        kickGain.gain.setValueAtTime(0.8, audioContext.currentTime);
+        kickGain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+        
+        kickOsc.connect(kickFilter);
+        kickFilter.connect(kickGain);
+        kickGain.connect(audioContext.destination);
+        
+        kickOsc.start(audioContext.currentTime);
+        kickOsc.stop(audioContext.currentTime + 0.5);
+        break;
+
+      case 'snare':
+        // Redoblante - combinación de tono y ruido
+        const snareOsc = audioContext.createOscillator();
+        const snareNoise = audioContext.createBufferSource();
+        const snareGain = audioContext.createGain();
+        const noiseGain = audioContext.createGain();
+        
+        // Crear ruido blanco para el snare
+        const noiseBuffer = audioContext.createBuffer(1, audioContext.sampleRate * 0.2, audioContext.sampleRate);
+        const noiseData = noiseBuffer.getChannelData(0);
+        for (let i = 0; i < noiseData.length; i++) {
+          noiseData[i] = (Math.random() - 0.5) * 2;
+        }
+        
+        snareNoise.buffer = noiseBuffer;
+        snareOsc.frequency.setValueAtTime(200, audioContext.currentTime);
+        snareOsc.type = 'triangle';
+        
+        snareGain.gain.setValueAtTime(0.3, audioContext.currentTime);
+        snareGain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2);
+        
+        noiseGain.gain.setValueAtTime(0.4, audioContext.currentTime);
+        noiseGain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+        
+        snareOsc.connect(snareGain);
+        snareNoise.connect(noiseGain);
+        snareGain.connect(audioContext.destination);
+        noiseGain.connect(audioContext.destination);
+        
+        snareOsc.start(audioContext.currentTime);
+        snareNoise.start(audioContext.currentTime);
+        snareOsc.stop(audioContext.currentTime + 0.2);
+        break;
+
+      case 'hihat':
+        // Hi-hat cerrado - sonido metálico y corto
+        const hihatNoise = audioContext.createBufferSource();
+        const hihatGain = audioContext.createGain();
+        const hihatFilter = audioContext.createBiquadFilter();
+        
+        const hihatBuffer = audioContext.createBuffer(1, audioContext.sampleRate * 0.1, audioContext.sampleRate);
+        const hihatData = hihatBuffer.getChannelData(0);
+        for (let i = 0; i < hihatData.length; i++) {
+          hihatData[i] = (Math.random() - 0.5) * 2;
+        }
+        
+        hihatNoise.buffer = hihatBuffer;
+        hihatFilter.type = 'highpass';
+        hihatFilter.frequency.setValueAtTime(8000, audioContext.currentTime);
+        
+        hihatGain.gain.setValueAtTime(0.4, audioContext.currentTime);
+        hihatGain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+        
+        hihatNoise.connect(hihatFilter);
+        hihatFilter.connect(hihatGain);
+        hihatGain.connect(audioContext.destination);
+        
+        hihatNoise.start(audioContext.currentTime);
+        break;
+
+      case 'openhat':
+        // Hi-hat abierto - más largo y resonante
+        const openNoise = audioContext.createBufferSource();
+        const openGain = audioContext.createGain();
+        const openFilter = audioContext.createBiquadFilter();
+        
+        const openBuffer = audioContext.createBuffer(1, audioContext.sampleRate * 0.3, audioContext.sampleRate);
+        const openData = openBuffer.getChannelData(0);
+        for (let i = 0; i < openData.length; i++) {
+          openData[i] = (Math.random() - 0.5) * 2;
+        }
+        
+        openNoise.buffer = openBuffer;
+        openFilter.type = 'bandpass';
+        openFilter.frequency.setValueAtTime(6000, audioContext.currentTime);
+        
+        openGain.gain.setValueAtTime(0.3, audioContext.currentTime);
+        openGain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+        
+        openNoise.connect(openFilter);
+        openFilter.connect(openGain);
+        openGain.connect(audioContext.destination);
+        
+        openNoise.start(audioContext.currentTime);
+        break;
+
+      case 'ride':
+        // Ride cymbal - sonido metálico sostenido
+        const rideOsc1 = audioContext.createOscillator();
+        const rideOsc2 = audioContext.createOscillator();
+        const rideGain = audioContext.createGain();
+        
+        rideOsc1.frequency.setValueAtTime(2500, audioContext.currentTime);
+        rideOsc2.frequency.setValueAtTime(3200, audioContext.currentTime);
+        rideOsc1.type = 'sawtooth';
+        rideOsc2.type = 'triangle';
+        
+        rideGain.gain.setValueAtTime(0.2, audioContext.currentTime);
+        rideGain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.8);
+        
+        rideOsc1.connect(rideGain);
+        rideOsc2.connect(rideGain);
+        rideGain.connect(audioContext.destination);
+        
+        rideOsc1.start(audioContext.currentTime);
+        rideOsc2.start(audioContext.currentTime);
+        rideOsc1.stop(audioContext.currentTime + 0.8);
+        rideOsc2.stop(audioContext.currentTime + 0.8);
+        break;
+
+      case 'crash':
+        // Crash cymbal - explosivo y resonante
+        const crashNoise = audioContext.createBufferSource();
+        const crashOsc = audioContext.createOscillator();
+        const crashGain = audioContext.createGain();
+        
+        const crashBuffer = audioContext.createBuffer(1, audioContext.sampleRate * 1.5, audioContext.sampleRate);
+        const crashData = crashBuffer.getChannelData(0);
+        for (let i = 0; i < crashData.length; i++) {
+          crashData[i] = (Math.random() - 0.5) * 2;
+        }
+        
+        crashNoise.buffer = crashBuffer;
+        crashOsc.frequency.setValueAtTime(4000, audioContext.currentTime);
+        crashOsc.type = 'sawtooth';
+        
+        crashGain.gain.setValueAtTime(0.4, audioContext.currentTime);
+        crashGain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 1.5);
+        
+        crashNoise.connect(crashGain);
+        crashOsc.connect(crashGain);
+        crashGain.connect(audioContext.destination);
+        
+        crashNoise.start(audioContext.currentTime);
+        crashOsc.start(audioContext.currentTime);
+        crashOsc.stop(audioContext.currentTime + 1.5);
+        break;
+
+      case 'tom1':
+      case 'tom2':
+      case 'tom3':
+        // Toms - sonidos resonantes con diferentes tonos
+        const frequencies = { tom1: 120, tom2: 100, tom3: 80 };
+        const tomOsc = audioContext.createOscillator();
+        const tomGain = audioContext.createGain();
+        
+        tomOsc.frequency.setValueAtTime(frequencies[soundName as keyof typeof frequencies], audioContext.currentTime);
+        tomOsc.frequency.exponentialRampToValueAtTime(frequencies[soundName as keyof typeof frequencies] * 0.7, audioContext.currentTime + 0.3);
+        tomOsc.type = 'sine';
+        
+        tomGain.gain.setValueAtTime(0.5, audioContext.currentTime);
+        tomGain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.4);
+        
+        tomOsc.connect(tomGain);
+        tomGain.connect(audioContext.destination);
+        
+        tomOsc.start(audioContext.currentTime);
+        tomOsc.stop(audioContext.currentTime + 0.4);
+        break;
+    }
+  };
+
   const playSound = useCallback((soundName: string) => {
     if (isMuted) return;
     
-    // Simulamos el sonido con una vibración visual y audio web
     setLastPlayed(soundName);
-    
-    // Audio Web API simulation
-    const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
-    const oscillator = audioContext.createOscillator();
-    const gainNode = audioContext.createGain();
-    
-    // Diferentes frecuencias para cada tipo de sonido
-    const frequencies: { [key: string]: number } = {
-      kick: 60,
-      snare: 200,
-      hihat: 8000,
-      openhat: 6000,
-      ride: 3000,
-      crash: 4000,
-      tom1: 150,
-      tom2: 120,
-      tom3: 100
-    };
-    
-    oscillator.frequency.setValueAtTime(frequencies[soundName] || 440, audioContext.currentTime);
-    oscillator.type = soundName === 'hihat' || soundName === 'openhat' ? 'sawtooth' : 'sine';
-    
-    gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
-    
-    oscillator.connect(gainNode);
-    gainNode.connect(audioContext.destination);
-    
-    oscillator.start(audioContext.currentTime);
-    oscillator.stop(audioContext.currentTime + 0.5);
+    createDrumSound(soundName);
     
     setTimeout(() => setLastPlayed(null), 200);
   }, [isMuted]);
