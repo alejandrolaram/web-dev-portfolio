@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ExternalLink, Github, Dice1, Music, StickyNote, CheckSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -12,6 +11,7 @@ const Portfolio = () => {
       tech: ["React", "TypeScript", "Tailwind CSS"],
       gradient: "from-cyan-400 to-blue-500",
       demoUrl: "/dice-challenge",
+      githubUrl: "https://github.com/tu-usuario/web-dev-portfolio",
       isActive: true
     },
     {
@@ -21,6 +21,7 @@ const Portfolio = () => {
       tech: ["React", "TypeScript", "Web Audio API", "Tailwind CSS"],
       gradient: "from-pink-400 to-purple-500",
       demoUrl: "/drum-kit",
+      githubUrl: "https://github.com/tu-usuario/web-dev-portfolio",
       isActive: true
     },
     {
@@ -30,6 +31,7 @@ const Portfolio = () => {
       tech: ["React", "TypeScript", "Local Storage", "Tailwind CSS"],
       gradient: "from-yellow-400 to-orange-500",
       demoUrl: "/keeper-app",
+      githubUrl: "https://github.com/tu-usuario/web-dev-portfolio",
       isActive: true
     },
     {
@@ -39,6 +41,7 @@ const Portfolio = () => {
       tech: ["React", "TypeScript", "Local Storage", "Tailwind CSS"],
       gradient: "from-green-400 to-emerald-500",
       demoUrl: "/todo-list",
+      githubUrl: "https://github.com/tu-usuario/web-dev-portfolio",
       isActive: true
     }
   ];
@@ -115,10 +118,15 @@ const Portfolio = () => {
                       Demo
                     </button>
                   )}
-                  <button className="flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm text-white rounded-xl transition-colors duration-300 cursor-not-allowed border border-white/30">
+                  <a 
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm text-white rounded-xl transition-all duration-300 hover:bg-white/30 border border-white/30 font-semibold transform hover:scale-105"
+                  >
                     <Github size={18} />
                     Código
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
