@@ -16,12 +16,8 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 bg-white/10 backdrop-blur-md shadow-2xl z-50 border-b border-white/20">
       <nav className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-            Mi Portafolio ✨
-          </div>
-          
-          {/* Desktop Menu */}
+        <div className="flex items-center justify-center md:justify-center">
+          {/* Desktop Menu - Centered */}
           <div className="hidden md:flex items-center space-x-8">
             <button 
               onClick={() => scrollToSection('inicio')}
@@ -53,9 +49,9 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Positioned to the right */}
           <button 
-            className="md:hidden p-2 text-white bg-white/20 backdrop-blur-md border border-white/30 rounded-lg shadow-xl"
+            className="md:hidden p-2 text-white bg-white/20 backdrop-blur-md border border-white/30 rounded-lg shadow-xl ml-auto"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
