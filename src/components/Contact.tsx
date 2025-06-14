@@ -66,18 +66,18 @@ const Contact = () => {
                     <p className="text-white/80">tu.email@ejemplo.com</p>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div className="glass-effect rounded-2xl p-8 border border-white/30 shadow-2xl backdrop-blur-glass hover-glow">
-              <h4 className="text-xl font-bold text-white mb-4 text-shadow-glow">Redes Sociales</h4>
-              <div className="flex gap-4">
-                <a href="#" className="bg-gradient-to-r from-gray-600 to-gray-800 p-3 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 border border-white/30 glass-effect">
-                  <Github className="text-white" size={24} />
-                </a>
-                <a href="https://www.linkedin.com/in/alejandrolaramoreno/" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-blue-500 to-blue-700 p-3 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 border border-white/30 glass-effect">
-                  <Linkedin className="text-white" size={24} />
-                </a>
+                
+                <div className="pt-4">
+                  <h4 className="text-lg font-semibold text-white mb-4 text-shadow-glow">Redes Sociales</h4>
+                  <div className="flex gap-4">
+                    <a href="#" className="bg-gradient-to-r from-gray-600 to-gray-800 p-3 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 border border-white/30 glass-effect">
+                      <Github className="text-white" size={24} />
+                    </a>
+                    <a href="https://www.linkedin.com/in/alejandrolaramoreno/" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-blue-500 to-blue-700 p-3 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 border border-white/30 glass-effect">
+                      <Linkedin className="text-white" size={24} />
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
