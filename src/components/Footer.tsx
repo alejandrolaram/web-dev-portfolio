@@ -1,6 +1,4 @@
-
 import React from 'react';
-
 const Footer = () => {
   return <footer className="bg-gradient-to-br from-purple-900 via-blue-900 to-cyan-900 text-white py-12 border-t border-white/20 relative">
       {/* Animated background elements */}
@@ -11,10 +9,9 @@ const Footer = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex justify-center">
-          <p className="text-white/70 text-sm">© 2024 Alejandro Lara. Todos los derechos reservados.</p>
+          <p className="text-white/70 text-sm">© 2025 Alejandro Lara. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>;
 };
-
 export default Footer;
